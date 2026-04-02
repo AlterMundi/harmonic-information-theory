@@ -13,11 +13,3 @@ LaTeX/*.synctex.gz
 LaTeX/*.toc
 LaTeX/*.lof
 LaTeX/*.lot
-
-# Binary files
-*.png
-*.jpg
-*.docx
-
-# Internal working documents
-Insumos/
