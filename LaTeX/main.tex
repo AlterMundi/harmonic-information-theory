@@ -1,0 +1,242 @@
+% Harmonic Information Theory: Foundations
+% Foundational Document
+% Version 1.0 (2026-03-14)
+%
+% Compile with: pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
+
+\documentclass[12pt, a4paper, oneside]{book}
+
+% --- Encoding & language ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% --- Typography ---
+\usepackage{mathpazo}               % Palatino for text and math
+\usepackage[scaled=0.85]{helvet}    % Helvetica for sans-serif
+\usepackage{courier}                % Courier for monospace
+\usepackage{microtype}              % Microtypographic refinements
+\linespread{1.05}                   % Palatino benefits from slightly more leading
+
+% --- Page geometry ---
+\usepackage[
+  top=3cm,
+  bottom=3cm,
+  inner=3.5cm,
+  outer=2.5cm,
+  headheight=15pt
+]{geometry}
+
+% --- Math ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --- Bibliography ---
+\usepackage[
+  backend=biber,
+  style=apa,
+  sortcites=true,
+  sorting=nyt,
+  uniquename=false
+]{biblatex}
+\addbibresource{references.bib}
+
+% --- Underscore safety (must load BEFORE hyperref) ---
+\usepackage[strings]{underscore}    % _ works in text mode without escaping
+
+% --- Cross-references & hyperlinks ---
+\usepackage[
+  colorlinks=true,
+  linkcolor=darkblue,
+  citecolor=darkblue,
+  urlcolor=darkblue,
+  bookmarks=true,
+  bookmarksnumbered=true
+]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+
+% --- Headers & footers ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% --- Chapter & section formatting ---
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+% --- Epigraphs ---
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.7\textwidth}
+\renewcommand{\epigraphflush}{center}
+\renewcommand{\sourceflush}{center}
+
+% --- Graphics & diagrams ---
+\usepackage{tikz}               % Diagrams
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, calc, decorations.pathreplacing}
+\usepackage{graphicx}           % External graphics
+
+% --- Misc ---
+\usepackage{booktabs}           % Better tables
+\usepackage{tabularx}           % Auto-width columns (X type)
+\usepackage{enumitem}           % List customization
+\usepackage{csquotes}           % Context-sensitive quotes (for biblatex)
+
+% --- Custom commands ---
+\newcommand{\HIT}{\textsc{hit}}
+\newcommand{\ratio}[2]{#1\!:\!#2}
+
+% --- Document metadata ---
+\title{%
+  \textbf{\Huge Harmonic Information Theory}\\[0.6em]
+  {\LARGE Foundations}
+}
+\author{%
+  {\normalsize\textsc{Authors}}\\[0.3em]
+  {\normalsize Mariano Fern\'andez M\'endez \quad Nicol\'as Ech\'aniz}\\[1.5em]
+  {\normalsize\textsc{Compilation and final writing}}\\[0.3em]
+  {\normalsize Mariano Fern\'andez M\'endez}\\[1.5em]
+  {\normalsize\textsc{Institutional framework}}\\[0.3em]
+  {\normalsize Asociaci\'on Civil AlterMundi}\\[1.5em]
+  {\normalsize\textsc{Research and development team}}\\[0.3em]
+  {\normalsize Anabella Scigliano \quad
+  Federico Bonino \quad
+  Juli\'an De La Reta}\\
+  {\normalsize Mart\'in Fern\'andez M\'endez \quad
+  Pablo Bustos \quad
+  Saira Asua}\\
+  {\normalsize Santiago Cetr\'an \quad
+  Sof\'ia Campagnoli}
+}
+\date{2026}
+
+% ============================================================
+\begin{document}
+
+\frontmatter
+
+% --- Title page ---
+\maketitle
+
+% --- Legal page ---
+\input{chapters/legal}
+
+% --- Writing process note ---
+\input{chapters/writing_note}
+
+% --- Table of contents ---
+\tableofcontents
+
+% ============================================================
+\mainmatter
+
+% --- Introduction ---
+\input{chapters/introduction}
+
+% --- PART I ---
+\part{The Observation and the Problem}
+\input{chapters/ch01_tendency}
+\input{chapters/ch02_dispersion}
+
+% --- PART II ---
+\part{Ontological Foundations}
+\input{chapters/ch03_ontology}
+\input{chapters/ch04_consonance}
+\input{chapters/ch05_hypotheses}
+
+% --- PART III ---
+\part{State of Knowledge}
+\input{chapters/ch06_convergence}
+\input{chapters/ch07_epistemology}
+
+% --- PART IV ---
+\part{The Theory: Efficiency, Life, Meaning}
+\input{chapters/ch08_efficiency}
+\input{chapters/ch09_sense}
+\input{chapters/ch10_activation}
+
+% --- PART V ---
+\part{The Experimental Program}
+\input{chapters/part5_threshold}
+\input{chapters/ch11_phideus}
+\input{chapters/ch12_beacon}
+\input{chapters/ch13_convergence_pb}
+
+% --- PART VI ---
+\part{Scope, Limits, and Future}
+\input{chapters/ch14_not}
+\input{chapters/ch15_agenda}
+\input{chapters/ch16_applications}
+
+% ============================================================
+\backmatter
+
+% --- Bibliography (organized by field) ---
+\nocite{*}  % Include all entries, even those not explicitly cited in the text
+\printbibheading[title={References}]
+
+\printbibliography[keyword=convergence, heading=subbibliography, title={Physics, Neuroscience, and Convergence}]
+\printbibliography[keyword=neuroscience, heading=subbibliography, title={Neural Resonance and Cross-Frequency Coupling}]
+\printbibliography[keyword=psychoacoustics, heading=subbibliography, title={Psychoacoustics and Auditory Perception}]
+\printbibliography[keyword=dynamics, heading=subbibliography, title={Nonlinear Dynamics and Synchronization}]
+\printbibliography[keyword=cross-species, heading=subbibliography, title={Cross-Species Perception}]
+\printbibliography[keyword=ontology, heading=subbibliography, title={Ontology and Philosophy of Information}]
+\printbibliography[keyword=information-theory, heading=subbibliography, title={Information Theory}]
+\printbibliography[keyword=process-philosophy, heading=subbibliography, title={Process Philosophy}]
+\printbibliography[keyword=autopoiesis, heading=subbibliography, title={Autopoiesis, Enactivism, and Biological Autonomy}]
+\printbibliography[keyword=free-energy, heading=subbibliography, title={Free Energy and Predictive Processing}]
+\printbibliography[keyword=interdisciplinarity, heading=subbibliography, title={Interdisciplinarity and Boundary Objects}]
+\printbibliography[keyword=epistemology, heading=subbibliography, title={Epistemology and Philosophy of Science}]
+\printbibliography[keyword=consonance, heading=subbibliography, title={Consonance and Dissonance}]
+\printbibliography[keyword=just-intonation, heading=subbibliography, title={Just Intonation and Tuning Systems}]
+\printbibliography[keyword=ethnomusicology, heading=subbibliography, title={Ethnomusicology}]
+\printbibliography[keyword=archaeoacoustics, heading=subbibliography, title={Archaeoacoustics}]
+\printbibliography[keyword=cross-cultural, heading=subbibliography, title={Cross-Cultural Studies}]
+\printbibliography[keyword=efficiency, heading=subbibliography, title={Informational Efficiency}]
+\printbibliography[keyword=recurrence, heading=subbibliography, title={Recurrence Analysis}]
+\printbibliography[keyword=thermodynamics, heading=subbibliography, title={Thermodynamics and Computation}]
+\printbibliography[keyword=biological-sense, heading=subbibliography, title={Biological Sensitivity to Harmony}]
+\printbibliography[keyword=reward-neuroscience, heading=subbibliography, title={Reward Neuroscience and Music}]
+\printbibliography[keyword=music-therapy, heading=subbibliography, title={Music Therapy}]
+\printbibliography[keyword=entrainment, heading=subbibliography, title={Entrainment and Rhythmic Synchronization}]
+\printbibliography[keyword=polyvagal, heading=subbibliography, title={Polyvagal Theory}]
+\printbibliography[keyword=bioelectricity, heading=subbibliography, title={Bioelectricity and Morphogenesis}]
+\printbibliography[keyword=pmp-jungian, heading=subbibliography, title={Analytical Psychology and PMP}]
+\printbibliography[keyword=phideus, heading=subbibliography, title={Computational Methods (Phideus)}]
+\printbibliography[keyword=injection-mechanisms, heading=subbibliography, title={Injection Mechanisms and Representation Learning}]
+\printbibliography[keyword=beacon, heading=subbibliography, title={Harmonic Beacon}]
+\printbibliography[keyword=lissajous, heading=subbibliography, title={Lissajous Figures and Visual Harmonics}]
+\printbibliography[keyword=analytical-psychology, heading=subbibliography, title={Depth Psychology and Symbolic Process}]
+\printbibliography[keyword=critical-epistemology, heading=subbibliography, title={Critical Epistemology}]
+% supplementary category eliminated — all entries reassigned to thematic categories
+
+% --- Appendices ---
+\appendix
+\renewcommand{\chaptername}{Appendix}
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
+\input{chapters/appendices}
+
+\end{document}

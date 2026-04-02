@@ -1,0 +1,1050 @@
+% Appendices — Harmonic Information Theory
+% Auto-generated from Markdown. Citations need manual \parencite conversion.
+
+
+
+\chapter{Glossary}
+
+
+This glossary fixes the meaning of the manuscript's main terms as they are used here. It is not a general dictionary of music, neuroscience, or philosophy. It is a compact operational map of the vocabulary stabilized across Chapters 1-15.
+
+Before the alphabetical entries, Table~\ref{tab:hypotheses-glossary} gathers the program's six canonical hypotheses in the compact form used throughout the manuscript. The table is not a substitute for the argument developed in Chapter 5. It is a navigation aid: a reader can recover, at a glance, what each hypothesis claims, where it is primarily developed, and what kind of evidential status it currently carries in the present cut of the manuscript.
+
+\begin{table}[ht]
+\centering
+\caption{Canonical HIT hypotheses (\texttt{H1--H6}).}
+\label{tab:hypotheses-glossary}
+\footnotesize
+\begin{tabularx}{\textwidth}{l X c X}
+\toprule
+\textbf{Hyp.} & \textbf{Core claim} & \textbf{Status} & \textbf{Key probe} \\
+\midrule
+\texttt{H1} & Natural signals contain structured ratio distributions that depart from arbitrariness strongly enough to support lawful description. & Validated & Ratio structure across musical, neural, ecological, and physiological literatures \\
+\texttt{H2} & Structured ratio distributions are learnable by computational systems in ways that matter for representation and task behavior. & Validated & Phideus Escalon~1 closure and descriptor-guided learning across controlled baselines \\
+\texttt{H3} & Ratio structure can be shared cross-modally rather than remaining trapped inside one material substrate. & Active test & Phideus cross-modal retrieval, causal contrasts, and latent reorganization in Audio$\leftrightarrow$MIDI \\
+\texttt{H4} & Simple harmonic ratios may correspond to regimes of lower processing cost or greater informational efficiency. & Conjecture & Theoretical bridge through Landauer, prediction cost, free-energy style arguments \\
+\texttt{H5} & Biological systems possess a functional sensitivity to consonant or harmonically organized regimes. & Conjecture & Neuroscience of harmonic relations, acoustic ecology, physiological coordination \\
+\texttt{H6} & The interval, or ratio more generally, can function as a scale-invariant carrier of information. & Partial test & Theoretical invariance argument plus partial support from cross-frequency and cross-modal organization \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Arm}
+An arm is a concrete experimental condition within a comparison. In Phideus, an arm usually results from pairing a descriptor with an injection mechanism under a fixed training and evaluation protocol. A baseline is the limiting case in which that intervention is absent rather than a term for the whole experiment. \emph{See also:} baseline, descriptor, mechanism.
+
+\textbf{Baseline}
+A baseline is the reference condition against which an intervention is read. In this manuscript, baselines are held as comparable as possible to the tested arm in data, architecture, and protocol, while removing the specific descriptor-guided or field-specific intervention under study. A baseline number therefore matters as a point of comparison, not as an isolated achievement. \emph{See also:} arm, indicator, inference.
+
+\textbf{Beacon}
+Beacon is the experiential and physiological probe of HIT. It is a family of devices and protocols built to generate a sustained harmonic field under controlled enough conditions that listening, biosignals, and visible patterns can be studied as evidence rather than left as atmosphere. Beacon does not duplicate what Phideus does computationally; it opens a different register of observation. \emph{Developed in Chapter 12.}
+
+\textbf{Consonance}
+Consonance names a regime of relation that tends toward stability, legibility, or coherent organization under specific conditions. In this manuscript it is not treated as a timeless moral value, nor as a mere synonym for pleasantness. It can be approached through physical organization, perceptual organization, or both, but those levels must not be collapsed. \emph{See also:} harmony, harmonicity, natural harmony, perceptual harmony.
+
+\textbf{Convergence}
+Convergence names the fact that different probes, literatures, or registers begin to point toward a related problem-space without thereby becoming identical. In HIT, convergence is never treated as a single decisive proof. It matters because independent lines of work can mutually reshape what becomes plausible, legible, and worth testing next. \emph{See also:} inference, register.
+
+\textbf{Cross-modal retrieval}
+Cross-modal retrieval is the task in which one modality must recover its paired partner in another modality from a structured candidate pool. In Phideus it is the first readout of whether a shared representation has become useful, but it is not the final evidential horizon of the program. Geometry, causal contrast, and mechanism still have to be read on top of it. \emph{Developed in Chapter 11.}
+
+\textbf{Descriptor}
+A descriptor is a compact numerical summary of some hypothesized relational organization in a signal. In the strongest cases, descriptors are ratio-based or harmonic, but the program also uses non-ratio descriptors as controls. A descriptor is not the same thing as the route by which it enters a model, nor the same thing as the named arm in which it is tested. \emph{See also:} arm, baseline, mechanism.
+
+\textbf{Harmonic efficiency}
+Harmonic efficiency is the program's hypothesis that some proportional organizations support more stable, informative, or less wasteful coordination than less organized alternatives. In the present manuscript it is a theoretical and experimental orientation rather than a single fully formalized scalar. Chapter 15 treats its sharper mathematical definition as an open task rather than a completed closure. \emph{See also:} harmonic information, ratio, recurrence.
+
+\textbf{Harmonic field}
+A harmonic field is a sustained relational condition in which proportional organization is distributed across an acoustic or oscillatory environment rather than reduced to an isolated event. In Beacon, the field is physically maintained in a room and then probed through hearing, physiology, or visible pattern formation. The term therefore names a condition of organization, not a mood word. \emph{See also:} Beacon, pareidolia, resonance.
+
+\textbf{Harmonic information}
+Harmonic information is the manuscript's name for information carried or organized by patterned proportional relations, recurrences, couplings, and field structure rather than by arbitrary token identity alone. The term does not imply that all information is harmonic, nor that harmonic order is always optimal. It marks a candidate family of structured relations whose informational role deserves disciplined inquiry. \emph{See also:} harmony, ratio, recurrence.
+
+\textbf{Harmonic Information Theory (HIT)}
+HIT is the research program coordinated by this manuscript. It is not presented as a finished total theory, but as a disciplined attempt to investigate whether harmonic and proportional organization have explanatory, computational, biological, and experiential consequences across several domains. Its strength lies in the coordination of probes, distinctions, and tests rather than in a claim of final closure.
+
+\textbf{Harmonicity}
+Harmonicity refers more narrowly to the degree to which a signal or relation aligns with harmonic or overtone-like organization. It is more local and technical than harmony as a broader term, and more neutral than consonance as a historically charged one. The distinction matters because a system can show local harmonic structure without exhausting what the manuscript means by harmony. \emph{See also:} consonance, harmony.
+
+\textbf{Harmony}
+Harmony names organized relation before it names a musical style. The manuscript uses the term for patterned proportional organization that can matter in sound, physiology, representation, and field dynamics. Because of that widened use, harmony here must always be read with attention to scale and domain rather than assumed to mean tonal practice alone. \emph{See also:} consonance, harmonic information, natural harmony, perceptual harmony.
+
+\textbf{HAT}
+HAT stands for Harmonically Aware Technology. It names a design horizon in which devices, rooms, networks, and infrastructures are not blind to the proportional organization they emit into or encounter within lived environments. HAT is not a single product name. It is a design principle developed out of the Beacon line and later coupled to Phideus in the program's longer horizon. \emph{Developed in Chapters 11-15.}
+
+\textbf{Indicator}
+An indicator is a measurable proxy used to track a phenomenon or compare conditions. Indicators matter because research programs often begin by stabilizing legible proxies before they possess a full mechanism-level account of what is being measured. In this manuscript an indicator is therefore weaker than a proof, but stronger than a free-floating impression. \emph{See also:} inference, observation, protocol-bearing.
+
+\textbf{Inference}
+An inference is a conclusion licensed by data, method, and comparison. The manuscript insists on keeping inference distinct from raw observation and from the hypothesis proposed to explain that observation. This separation matters most in frontier research, where interesting effects can appear before the evidential status of their explanation is settled. \emph{See also:} indicator, observation, register.
+
+\textbf{Intuitive coprocessor}
+An intuitive coprocessor is a controlled speculative term for a future architecture able to read, compare, and respond to proportional organization in ways that assist human interpretation or action. The phrase does not name an existing machine, and it is not offered as mystical branding. It is a provisional name for a long-horizon convergence between sensing, actuation, and contextual interpretation. \emph{See also:} HAT, PPU.
+
+\textbf{Latent geometry}
+Latent geometry refers to the structure of distances, neighborhoods, and separations inside a learned representation space. In Phideus, descriptor-guided learning matters not only when scores improve but also when the geometry of that shared space becomes more legible, more organized, or differently structured under matched comparisons. The term therefore names an evidential object, not a decorative metaphor. \emph{Developed in Chapters 10 and 12.}
+
+\textbf{Lissajous}
+A Lissajous figure is a parametric pattern generated by coupled periodic motions. In this manuscript, Lissajous functions as a synthetic-physical bridge between Phideus and Beacon because the same proportional relations can be generated, visualized, parameterized, and later recaptured through analog instrumentation. It is therefore both an object of study and a testbed for convergence. \emph{Developed in Chapters 10, 12, and 14.}
+
+\textbf{Mechanism}
+A mechanism is the route by which a descriptor enters a model or acts within an experimental setup. In Phideus, examples include concatenation, cross-attention, attention bias, reverse cross-attention, and projection conditioning. A mechanism is not itself a descriptor, and it is not identical to the arm in which descriptor and route are jointly tested. \emph{See also:} arm, descriptor.
+
+\textbf{Mode locking}
+Mode locking names a regime in which oscillatory elements settle into a stable phase or frequency relation. It is one of the manuscript's paradigmatic examples of ordered coupling because it shows how distributed dynamics can achieve coherence without requiring strict identity among components. The term helps bridge dynamical systems, acoustics, and broader questions of organized relation. \emph{See also:} recurrence, resonance, structural coupling.
+
+\textbf{Natural harmony}
+Natural harmony refers to proportional organization expressed in physically grounded coordinates of the phenomenon itself. In the manuscript, it usually means ratios, overtone-like structures, or linear frequency relations that arise from the resonant organization of the measured system rather than from a perceptual normalization applied afterward. This is a methodological distinction before it becomes a philosophical one. \emph{See also:} perceptual harmony, ratio.
+
+\textbf{Observation}
+An observation is what has been seen, measured, or repeatedly reported at the level of data or situated report. It does not yet explain itself. The manuscript treats the distinction between observation, hypothesis, and inference as non-negotiable because the program often moves through zones where all three are tempting to collapse. \emph{See also:} indicator, inference.
+
+\textbf{Oscillatory portrait}
+An oscillatory portrait is a structured description of how multiple oscillatory components relate across time, scale, or frequency. In this manuscript the term appears both as an external empirical precedent and as a methodological horizon for future descriptor design. What matters is that the object of analysis becomes a relational pattern across bands, not a single isolated rhythm. \emph{Developed in Chapters 6 and 14.}
+
+\textbf{Pareidolia}
+Pareidolia is the active organization of ambiguous fields into recognizable patterns. The manuscript treats harmonic pareidolia not as a trivial mistake, but as a situated reading that becomes possible within a sufficiently structured field while remaining underdetermined in content. This makes it useful for Beacon without requiring that every perceived image or voice be treated as a finished objective object. \emph{See also:} Beacon, harmonic field.
+
+\textbf{Perceptual harmony}
+Perceptual harmony refers to the transforms through which organisms, cultures, or technical systems render organization musically or psychophysically usable. Logarithmic spacing, equal temperament, and semitone-based representations are typical cases. In HIT, perceptual harmony can be scientifically productive, but it must not be silently substituted for natural harmony at the moment of strong hypothesis testing. \emph{See also:} natural harmony, ratio.
+
+\textbf{Personal Myth Projection (PMP)}
+PMP is a psychotherapeutic technique developed by Julian De La Reta from the crossing of Jungian active imagination, Moreno's psychodrama, and Campbell's monomyth. Within the manuscript it appears both as an independent line of practice and as a line experimentally coupled to Beacon in order to explore how a sustained harmonic field may affect the accessibility and handling of deep psychic material. \emph{Developed in Chapter 12.}
+
+\textbf{Phideus}
+Phideus is the computational probe of HIT. It works with paired datasets, dual encoders, descriptor-guided interventions, shared latent spaces, and structured retrieval or geometry-based evaluation in order to ask whether proportional descriptions reorganize learned representation under controlled variation. It is not the whole program, but one of its two main experimental probes. \emph{Developed in Chapter 11.}
+
+\textbf{PPU}
+PPU stands for Proportional Processor Unity. It is the manuscript's provisional name for a long-horizon architecture in which proportional sensing, comparison, and actuation become tightly coupled. The term is intentionally future-facing: it does not name a deployed system, but a way of naming the possible convergence of Phideus, Beacon, and HAT. \emph{See also:} HAT, intuitive coprocessor.
+
+\textbf{Protocol-bearing}
+A line of work is protocol-bearing when it has become specified enough to support repeatable contrast, cumulative comparison, and clearer interpretation. The term is useful in this manuscript because many fronts begin with rich observations and only later become properly comparable protocols. Calling something protocol-bearing therefore marks a gain in scientific discipline, not a claim of final completion. \emph{See also:} indicator, observation.
+
+\textbf{Ratio}
+A ratio is a proportional relation between magnitudes, frequencies, durations, amplitudes, or other measurable quantities. In HIT, ratios matter because they can function as carriers of organization rather than as mere arithmetic descriptors. The manuscript consistently resists turning the ratio into a metaphysical absolute: a ratio is a candidate organizing relation, not destiny, purity, or automatic explanation. \emph{See also:} harmonic information, natural harmony.
+
+\textbf{Recurrence}
+Recurrence is patterned return through time. It matters in HIT because an organized system need not remain static in order to remain intelligible; what often matters is whether a relation can return, stabilize, and remain legible across variation. This is why recurrence functions as a bridge term between dynamical systems, consonance, and descriptor design. \emph{See also:} mode locking, resonance.
+
+\textbf{Register}
+A register is a distinct mode of evidence, description, and vocabulary. The manuscript uses the term most explicitly for the computational, physiological, and psychological lines of convergence, which do not reduce to one another even when they interact. Registers can mutually reshape one another without becoming a single level of explanation. \emph{Developed in Chapter 13.}
+
+\textbf{Resonance}
+Resonance names a selective amplification or response that occurs when a system couples strongly to a compatible driving structure. The term travels across physics, physiology, and perception in this manuscript because it captures a family resemblance in how organized relation becomes dynamically effective. Resonance alone does not prove HIT, but it is one of the clearest recurring motifs that make the program intelligible. \emph{See also:} harmonic field, mode locking.
+
+\textbf{Structural coupling}
+Structural coupling refers to the ongoing mutual specification of system and environment through recurrent interaction. In the manuscript the term helps articulate why organized relation can matter without being reduced to a simple linear input-output model. It is particularly important where biology, semiosis, and dynamical organization begin to overlap without collapsing into one vocabulary. \emph{See also:} mode locking, register.
+
+\textbf{VICReg}
+VICReg is the variance-invariance-covariance regularization objective used in the Phideus pipeline to train a shared representation without collapse. Its function in the manuscript is practical and methodological: it is the loss under which paired embeddings are made structurally compatible while variance and covariance constraints prevent degenerate solutions. The term therefore belongs to Phideus specifically, not to HIT in general. \emph{Developed in Chapter 11.}
+
+
+\chapter{Experimental Results}
+
+
+This appendix gathers the quantitative evidence that the main body either summarizes at high level or omits for narrative economy. It does not reopen the interpretation of the results. Its role is narrower and more practical: to make the current evidential state of Phideus recoverable in lookup form. Unless marked otherwise, all rows correspond to canonically read conditions already stabilized in the manuscript.
+
+
+\section{How to read this appendix}
+
+
+Five status labels are used throughout the appendix. \texttt{Closed positive} marks a result that supports the main evidential line under a fixed protocol. \texttt{Closed null} marks a condition that completed its comparison without defensible lift over baseline. \texttt{Closed negative useful} marks a condition whose failure clarified mechanism or domain limits. \texttt{Retrospective} marks a branch that is informative but not central to the present flagship claim. \texttt{Provisional} marks runs that already constrain interpretation but have not yet reached their final comparable endpoint.
+
+Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denotes the conservative score \texttt{min(A2M, M2A)} for the relevant evaluation pool. In Escalon 2, bootstrap intervals are grouped by speaker; in Escalon 1, the canonical summaries use the already stabilized multi-seed or gate-level readings rather than re-deriving the entire raw evaluation tree here. Where \texttt{best} and \texttt{final} differ, both are reported explicitly to avoid flattening early peaks into final closures.
+
+
+\section{Escalon 1 - Canonical closed results}
+
+
+The body of Chapter 11 uses Escalon 1 as the strongest demonstration that descriptor-guided cross-modal learning is real, causal, and geometrically non-trivial. The tables below gather the quantitative core of that claim in compact form.
+
+\begin{table}[ht]
+\centering
+\caption{Escalon 1 flagship retrieval summary. Multi-seed closed comparison for the canonical arms used in the main chapter.}
+\label{tab:e1-flagship}
+\footnotesize
+\begin{tabularx}{\textwidth}{l l c c X l}
+\toprule
+\textbf{Arm} & \textbf{Descriptor route} & \textbf{\texttt{S} (multi-seed)} & \textbf{$\Delta$ vs \texttt{D0}} & \textbf{Reading} & \textbf{Status} \\
+\midrule
+\texttt{D0} & none & $75.2\% \pm 2.3$ & $0.0$ & unguided shared-space baseline & closed baseline \\
+\texttt{d4a4} & dual guided (\texttt{D4+A4}) & $84.1\% \pm 2.3$ & $+8.9$ & flagship guided arm & closed positive \\
+\texttt{a4r} & audio-side rev.\ cross-att & $80.7\% \pm 1.9$ & $+5.5$ & strongest single-descriptor arm & closed positive \\
+\texttt{d4-a4r} & hybrid (\texttt{D4}+\texttt{A4r}) & $81.2\% \pm 2.5$ & $+6.0$ & hybrid guided arm & closed positive \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Causal and ablation evidence. Parameter-matched and inference-time contrasts that keep the descriptor claim from collapsing into a parameter-count story.}
+\label{tab:e1-causal}
+\footnotesize
+\begin{tabularx}{\textwidth}{l l c c X l}
+\toprule
+\textbf{Test} & \textbf{Contrast} & \textbf{\texttt{S}} & \textbf{$\Delta$ vs guided} & \textbf{Interpretive role} & \textbf{Status} \\
+\midrule
+Test01 & inference-time zeroing & $7.8\%$ & $-76.0$ & descriptor causally necessary at inference & closed pos. \\
+Test02 & real descriptor & $83.0\%$ & ref. & matched positive condition & closed pos. \\
+Test02 & zero descriptor & $75.0\%$ & $-8.0$ & falls back to baseline band & closed pos. \\
+Test02 & random descriptor & $73.6\%$ & $-9.4$ & control without structured guidance & closed pos. \\
+Test02 & shuffled descriptor & $73.6\%$ & $-9.4$ & control without correct pairing & closed pos. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Geometry, information retention, and fine discrimination. The descriptor arms do not merely raise retrieval. They also reorganize cross-encoder geometry and preserve more cross-modal information prior to the projection bottleneck.}
+\label{tab:e1-geometry}
+\footnotesize
+\begin{tabularx}{\textwidth}{l c c c X}
+\toprule
+\textbf{Arm} & \textbf{Cross-enc.\ CKA} & \textbf{Pre-proj.\ retention} & \textbf{Hard-neg.\ acc.} & \textbf{Reading} \\
+\midrule
+\texttt{D0} & $0.435$ & $0.597$ & $80.4\%$ & baseline geometry and fine discrimination \\
+\texttt{d4a4} & $0.659$ & $0.770$ & $95.2\%$ & best retention and best retrieval \\
+\texttt{a4r} & $0.766$ & $0.712$ & $94.4\%$ & strongest single-descriptor alignment \\
+\texttt{d4-a4r} & $0.794$ & $0.748$ & $94.2\%$ & highest alignment, not highest retrieval \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Gate 8 conditioned projections. Projection conditioning supplies the clearest evidence that the signal survives deep in the pipeline.}
+\label{tab:gate8}
+\footnotesize
+\begin{tabularx}{\textwidth}{l l c c c l}
+\toprule
+\textbf{Arm} & \textbf{Cond.\ route} & \textbf{Best \texttt{S}} & \textbf{Epoch} & \textbf{$\Delta$ vs \texttt{ctrl}} & \textbf{Status} \\
+\midrule
+\texttt{a4r-ctrl} & none & $79.2\%$ & n/r & $0.0$ & closed baseline \\
+\texttt{a4r-pcm} & MIDI-side proj.\ cond. & $80.0\%$ & n/r & $+0.8$ & closed positive \\
+\texttt{a4r-pcd-zero} & audio-side, zero ctrl & $81.8\%$ & 30 & $+2.6$ & closed positive \\
+\texttt{a4r-pca} & audio-side proj.\ cond. & $82.6\%$ & 30 & $+3.4$ & closed positive \\
+\texttt{a4r-pcd} & dual-cond.\ projection & $84.2\%$ & 25 & $+5.0$ & closed positive \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\section{Escalon 1 - Retrospective branches omitted from the main chapter}
+
+
+Chapter 11 keeps the retrospective music branch offstage because its role is secondary to the flagship argument. The branch still matters, however, because it documents what happened when natural-harmonic questions were reopened within music after the main causal line had already been secured.
+
+\begin{table}[ht]
+\centering
+\caption{Gate 9 and A10 retrospective sweep. These results are informative, but they are not the chapter's central evidence.}
+\label{tab:gate9-a10}
+\footnotesize
+\begin{tabularx}{\textwidth}{l l l c c c l}
+\toprule
+\textbf{Arm} & \textbf{Branch} & \textbf{Mechanism} & \textbf{Best \texttt{S}} & \textbf{Epoch} & \textbf{Final \texttt{S}} & \textbf{Status} \\
+\midrule
+\texttt{a7r} & Gate 9 & rev.\ cross-att & $70.4\%$ & 29 & $70.4\%$ & retrospective \\
+\texttt{a9r} & Gate 9 & rev.\ cross-att & $71.6\%$ & 30 & $71.6\%$ & retrospective \\
+\texttt{a10ar} & A10 revision & rev.\ cross-att & $70.6\%$ & 28 & $70.6\%$ & retrospective \\
+\texttt{a10br} & A10 revision & rev.\ cross-att & $70.0\%$ & 29 & $70.0\%$ & retrospective \\
+\texttt{a10cr} & A10 revision & rev.\ cross-att & $69.2\%$ & 29 & $69.2\%$ & retrospective \\
+\texttt{a10dr} & A10 revision & rev.\ cross-att & $70.2\%$ & 30 & $70.2\%$ & retrospective \\
+\texttt{a10er} & A10 revision & rev.\ cross-att & $71.8\%$ & 27 & $70.2\%$ & retrospective \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The narrowness of that band is exactly what opened Gate 10. The relevant question was no longer only whether the descriptors differed in content, but whether the injection route had begun to compress those differences into a mechanism-driven ceiling.
+
+\begin{table}[ht]
+\centering
+\caption{Gate 10 mechanism sweep. Final results, 9/9 arms at 30 epochs.}
+\label{tab:gate10}
+\footnotesize
+\begin{tabularx}{\textwidth}{l l l c c X l}
+\toprule
+\textbf{Arm} & \textbf{Desc.} & \textbf{Mechanism} & \textbf{Epoch} & \textbf{\texttt{S}} & \textbf{Ranking} & \textbf{Status} \\
+\midrule
+\texttt{a7-concat} & \texttt{a7} & concat & 29 & $76.4\%$ & best overall & closed \\
+\texttt{a10a-concat} & \texttt{a10a} & concat & 30 & $75.6\%$ & second & closed \\
+\texttt{a10d-concat} & \texttt{a10d} & concat & 30 & $75.4\%$ & third & closed \\
+\texttt{a10a-pca} & \texttt{a10a} & FiLM/\texttt{pca} & 30 & $74.0\%$ & fourth & closed \\
+\texttt{a10d-pca} & \texttt{a10d} & FiLM/\texttt{pca} & 30 & $73.2\%$ & fifth & closed \\
+\texttt{a7-pca} & \texttt{a7} & FiLM/\texttt{pca} & 30 & $71.8\%$ & sixth & closed \\
+\texttt{a10a-ab} & \texttt{a10a} & attn bias & 30 & $59.6\%$ & seventh & closed \\
+\texttt{a10d-ab} & \texttt{a10d} & attn bias & 30 & $57.2\%$ & eighth & closed \\
+\texttt{a7-ab} & \texttt{a7} & attn bias & 30 & $55.8\%$ & ninth & closed \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Final ranking: \texttt{concat > FiLM/pca} (+2pp) \texttt{>> attn\_bias} (+16pp). Mechanism dominates over descriptor content (2--3pp spread within each mechanism class). All arms closed at comparable epochs.
+
+
+\section{Escalon 2 - Full null and descriptor-by-mechanism inventory}
+
+
+The second front produced a real cross-modal baseline and a real descriptor program, but not a positive descriptor lift under the first completed mechanism family. The main chapter compresses that fact into a short open-front reading. This section restores the quantitative detail that supports that more austere conclusion.
+
+\begin{table}[ht]
+\centering
+\caption{Escalon 2 phase summary. Phase-level reading of the front up to the opening of \texttt{S2-P3}.}
+\label{tab:e2-phases}
+\footnotesize
+\begin{tabularx}{\textwidth}{l X c c X l}
+\toprule
+\textbf{Phase} & \textbf{What it stabilized} & \textbf{Score} & \textbf{$\Delta$} & \textbf{Reading} & \textbf{Status} \\
+\midrule
+\texttt{S2-P0} & frozen population, split, synchrony audit & n/a & n/a & protocol foundation & closed setup \\
+\texttt{S2-P1} & linear baseline (CCA) & $64.4\%$ & n/a & cross-modal structure exists before neural training & closed baseline \\
+\texttt{S2-P2-ctrl} & neural baseline \texttt{D0} & $77.8\%$ & $0.0$ & reference neural arm & closed baseline \\
+\texttt{S2-P2-main} & concat family & $77.8\%$ & $+0.0$ & concat does not unlock descriptor lift & closed neg.\ useful \\
+\texttt{S2-P2.5} & \texttt{attn\_bias}/\texttt{xattn} factorial & $78.0\%$ & $+0.2$ & mechanistic null under attention routes & closed null \\
+\texttt{S2-P2.5b} & FiLM/\texttt{pca} & $77.4\%$ & $-0.4$ & completes first mechanism contrast & closed null \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\texttt{S2-P3} is intentionally excluded from the tables below because the regime is already implemented and in execution, but does not yet have a stable comparative readout.
+
+\begin{table}[ht]
+\centering
+\caption{Escalon 2 arm-by-arm inventory. All closed descriptor conditions leading to the present mechanistic null.}
+\label{tab:e2-arms}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l c c l X}
+\toprule
+\textbf{Arm} & \textbf{Descriptor} & \textbf{Mechanism} & \textbf{Best \texttt{S}} & \textbf{$\Delta$} & \textbf{CI / note} & \textbf{Reading} \\
+\midrule
+\texttt{D0} & none & baseline & $77.8\%$ & $0.0$ & CI $[72.0, 80.8]$ & neural reference \\
+\texttt{V4-lin} & oscillator dyn. & concat & $67.8\%$ & $-10.0$ & phase result & closed neg.\ useful \\
+\texttt{H-series} & harmonic series & concat & $59.8\%$ & $-18.0$ & phase result & closed neg.\ useful \\
+\texttt{A4-16k} & spectral control & concat & $77.8\%$ & $+0.0$ & phase result & closed neg.\ useful \\
+\texttt{V4-lin-ab} & oscillator dyn. & attn bias & $70.6\%$ & $-7.2$ & CI $[-10.8, -1.8]$ & \texttt{D0 > arm} \\
+\texttt{V4-lin-xattn} & oscillator dyn. & cross-att & $77.0\%$ & $-0.8$ & CI $[-4.7, +4.1]$ & $\approx$ \texttt{D0} \\
+\texttt{H-ser-ab} & harmonic series & attn bias & $78.0\%$ & $+0.2$ & CI $[-3.1, +4.5]$ & $\approx$ \texttt{D0} \\
+\texttt{H-ser-xattn} & harmonic series & cross-att & $73.4\%$ & $-4.4$ & CI $[-6.5, +0.2]$ & $\approx$ \texttt{D0} \\
+\texttt{A4-16k-ab} & spectral control & attn bias & $77.8\%$ & $+0.0$ & CI $[-2.8, +1.9]$ & $\approx$ \texttt{D0} \\
+\texttt{A4-16k-xattn} & spectral control & cross-att & $78.0\%$ & $+0.2$ & CI $[-3.4, +4.6]$ & $\approx$ \texttt{D0} \\
+\texttt{V4-lin-pca} & oscillator dyn. & FiLM/\texttt{pca} & $74.6\%$ & $-3.2$ & closed 3/3 & null under cond.\ proj. \\
+\texttt{H-ser-pca} & harmonic series & FiLM/\texttt{pca} & $77.4\%$ & $-0.4$ & closed 3/3 & null under cond.\ proj. \\
+\texttt{A4-16k-pca} & spectral control & FiLM/\texttt{pca} & $77.2\%$ & $-0.6$ & closed 3/3 & null under cond.\ proj. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Read together, these tables justify the current wording of the chapter. Escalon 2 is not a failed front. It is a front with a strong neural baseline, a completed first null on descriptor-by-mechanism contrasts, and a now-clean next question about encoder regime rather than mechanism alone.
+
+
+\chapter{Technical Specifications}
+
+
+This appendix gathers the technical inventory that Chapter 11 uses only in compact form. It is restricted to Phideus. Beacon hardware, physiological protocols, and the therapeutic setting of PMP belong elsewhere in the manuscript because their evidential logic is different. The goal here is narrower: to make the descriptor map, mechanism inventory, canonical arm naming, implemented architectural skeletons, and evaluation protocols recoverable without turning the main chapter into a methods paper.
+
+
+\section{How to read this appendix}
+
+
+Three status labels are used below. \texttt{Implemented} marks structures already instantiated in the current program. \texttt{Retrospective} marks structures that belong to a reopened branch and therefore matter historically and methodologically without defining the current flagship line. \texttt{Planned} marks structures already named in the program but not yet stabilized as technical implementations. The technical role of each item is also kept distinct: descriptor, mechanism, and arm are never treated as interchangeable labels.
+
+
+\section{Descriptor families}
+
+
+The descriptor inventory has to remain historical rather than flattened into a single universal tree. Escalon 1, the retrospective music branch, and Escalon 2 do not ask exactly the same question, so they do not generate the same descriptor families.
+
+\begin{table}[ht]
+\centering
+\caption{Descriptor families across implemented and retrospective fronts.}
+\label{tab:desc-families}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l c X l}
+\toprule
+\textbf{Label} & \textbf{Front} & \textbf{Side} & \textbf{Dim.} & \textbf{Object measured / epistemic role} & \textbf{Status} \\
+\midrule
+\texttt{D4} & Escalon 1 & MIDI & 4 & Local interval structure (semitone, octave-norm). Symbolic relational proof of concept. & implemented \\
+\texttt{A4} & Escalon 1 & Audio & 8 & Spectral dynamics across octave bands. Non-ratio structured control. & implemented \\
+\texttt{A7} & Gate 9 & Audio & 12 & Retrospective natural-harmonic audio ratios. Reopened natural-harmony question. & retrospective \\
+\texttt{A9} & Gate 9 & Audio & 12 & Retrospective natural-harmonic variant. Second reopening. & retrospective \\
+\texttt{A10a--e} & Gate 9/A10 & Audio & 6--32 & Recurrence-oriented continuous relational encodings. Ontology-free descriptor revision. & retrospective \\
+\texttt{V4-lin} & Escalon 2 & Speech & var. & Linear F0 ratios across frames. Tests oscillator dynamics. & implemented \\
+\texttt{V4-log} & Escalon 2 & Speech & var. & Log-ratio transform of F0 dynamics. Perceptual control. & planned \\
+\texttt{H-series} & Escalon 2 & Speech & 12 & Intra-frame harmonic-series amplitudes. Strongest direct harmonic-series test. & implemented \\
+\texttt{A4-16k} & Escalon 2 & Speech & 8 & Local spectral-band dynamics without ratio reference. Adversarial control. & implemented \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\section{Mechanism variants}
+
+
+Mechanisms define the route through which descriptor information acts. Their role is technical and causal: they determine whether descriptor content enters as appended feature, as attention context, as an internal bias, or as downstream conditioning.
+
+\begin{table}[ht]
+\centering
+\caption{Implemented mechanism variants.}
+\label{tab:mechanisms}
+\scriptsize
+\begin{tabularx}{\textwidth}{l X l l X}
+\toprule
+\textbf{Mechanism} & \textbf{Where it acts} & \textbf{Desc.\ side} & \textbf{Cost} & \textbf{Fronts} \\
+\midrule
+\texttt{concat} & encoder output before projection & either/both & cheapest & Escalon 1, Escalon 2 \\
+\texttt{cross-attention} & token interaction inside encoder & guided side attends desc.\ tokens & heavier & Escalon 2 \\
+\texttt{attention bias} & internal self-attention logits & guided side & light & Escalon 2, Gate 10 \\
+\texttt{rev.\ cross-att} & token interaction inside encoder & desc.\ queries encoder features & cheap (short desc.) & Escalon 1 retrospective \\
+\texttt{FiLM/pca} & projection head conditioning & guided side & preserves encoder & Gate 8, Escalon 2, Gate 10 \\
+\texttt{pcm} & proj.\ cond.\ on MIDI side & symbolic side & isolates symbolic-side & Gate 8 \\
+\texttt{pcd-zero} & proj.\ cond., zero-content ctrl & audio side & tests route itself & Gate 8 \\
+\texttt{pcd} & dual-conditioned projection & both sides & strongest downstream & Gate 8 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\section{Canonical arms}
+
+
+An arm is the experimentally concrete level where descriptor, mechanism, and front meet. The same descriptor can appear in multiple arms, and the same mechanism can be reused across distinct descriptor families. The point of the table below is to fix the naming system that the main text only uses in passing.
+
+\begin{table}[ht]
+\centering
+\caption{Canonical arms by front.}
+\label{tab:canonical-arms}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l l X l}
+\toprule
+\textbf{Arm} & \textbf{Desc.} & \textbf{Mechanism} & \textbf{Front} & \textbf{Function} & \textbf{Status} \\
+\midrule
+\texttt{D0} & none & none & E1/E2 & unguided neural baseline & impl. \\
+\texttt{d4a4} & \texttt{D4+A4} & dual concat & E1 & flagship guided dual arm & impl. \\
+\texttt{a4r} & \texttt{A4} & rev.\ cross-att & E1 & strongest single-desc.\ audio arm & impl. \\
+\texttt{d4-a4r} & \texttt{D4+A4} & concat + rev.\ cross-att & E1 & hybrid dual arm & impl. \\
+\texttt{a4r-ctrl} & none & none & G8 & proj.-cond.\ baseline & impl. \\
+\texttt{a4r-pcm} & \texttt{A4} & MIDI-side proj.\ cond. & G8 & symbolic-side cond.\ contrast & impl. \\
+\texttt{a4r-pca} & \texttt{A4} & audio-side proj.\ cond. & G8 & one-sided audio proj.\ cond. & impl. \\
+\texttt{a4r-pcd-zero} & zero & proj.\ cond. & G8 & architectural control & impl. \\
+\texttt{a4r-pcd} & \texttt{A4} & dual proj.\ cond. & G8 & best closed downstream arm & impl. \\
+\texttt{a7r} & \texttt{A7} & rev.\ cross-att & G9 & natural-harmony reopening & retro. \\
+\texttt{a9r} & \texttt{A9} & rev.\ cross-att & G9 & second reopening & retro. \\
+\texttt{a10ar--er} & \texttt{A10a--e} & rev.\ cross-att & A10 & descriptor revision in music branch & retro. \\
+\texttt{a7}, \texttt{a10a}, \texttt{a10d} & various & concat & G10 & pilot mechanism sweep (concat) & retro./prov. \\
+\texttt{*-pca} & various & FiLM/\texttt{pca} & G10 & pilot mechanism sweep (FiLM) & retro./prov. \\
+\texttt{*-ab} & various & attn bias & G10 & pilot mechanism sweep (attn bias) & retro./prov. \\
+\texttt{V4-lin} & \texttt{V4-lin} & concat & E2 & oscillator-dynamics descriptor & impl. \\
+\texttt{H-series} & \texttt{H-series} & concat & E2 & harmonic-series descriptor & impl. \\
+\texttt{A4-16k} & \texttt{A4-16k} & concat & E2 & non-ratio control & impl. \\
+\texttt{*-attnbias}, \texttt{*-xattn} & E2 descs & attn bias / cross-att & E2 & mechanism comparison & impl. \\
+\texttt{*-pca} & E2 descs & FiLM/\texttt{pca} & E2 & late cond.\ contrast & impl. \\
+\texttt{P3-*} & E2 descs & foundation speech & E2-P3 & encoder-regime comparison (WavLM) & planned \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\section{Architectural skeletons and shape conventions}
+
+
+The program is intentionally staged across distinct architectural regimes. What remains stable is not one identical network for every front, but a dual-encoder logic, a descriptor-injection point, a projection into shared space, and a comparison protocol.
+
+\begin{table}[ht]
+\centering
+\caption{Architectural skeletons by front.}
+\label{tab:arch-skeletons}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l l l l l}
+\toprule
+\textbf{Regime} & \textbf{Encoder A} & \textbf{Encoder B} & \textbf{Projection} & \textbf{Objective} & \textbf{Status} \\
+\midrule
+E1 canonical & MERT (${\sim}330$M) & MIDI Transf.\ (${\sim}13$M) & shared 256d & VICReg & impl. \\
+Gate 8 & E1 encoders & E1 encoders & cond.\ proj.\ head & VICReg + cond. & impl. \\
+G9/A10 & audio-only retro. & n/a & E1 protocol reuse & retrieval-oriented & retro. \\
+E2 initial & speech from scratch & EGG from scratch & shared heads & VICReg-style & impl. \\
+E2 P3 & WavLM-Large frozen & EGG encoder & shared proj. & cross-modal obj. & opening \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Two shape conventions matter throughout the appendix. First, descriptor dimensionality is local to each family and must not be read as a proxy for epistemic weight. Second, projection-space dimensionality is the comparative bottleneck of the front, not a generic property of HIT. The program therefore tracks where guidance enters and where relation is finally compressed.
+
+
+\section{Evaluation protocols}
+
+
+Phideus compares arms under structured retrieval rather than under free-form anecdotal scorekeeping. The exact pool composition changes by front, but the evaluation logic remains conservative: matched pairs, hard distractors, grouped uncertainty, and a score defined by the weaker retrieval direction.
+
+\begin{table}[!htbp]
+\centering
+\caption{Canonical evaluation protocols by front.}
+\label{tab:eval-protocols}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}llXlll@{}}
+\toprule
+\textbf{Front} & \textbf{Positive unit} & \textbf{Hard negatives} & \textbf{Pool} & \textbf{Grouping} & \textbf{Score} \\
+\midrule
+Escalon 1 & paired audio/MIDI segment & same piece, different time & 256 & piece & $S = \min(\text{A2M}, \text{M2A})$ \\
+Escalon 2 & paired speech/EGG segment & matched structured distractors & 128 & speaker & $S = \min(\text{S2E}, \text{E2S})$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Three protocol rules are stable across fronts. First, baselines are always read before guided arms. Second, grouped bootstrap is part of the protocol, not a decorative add-on. Third, when \texttt{best observed} and \texttt{final} diverge, both must be reported if that divergence matters for interpretation. That is why Appendix B reports partial, retrospective, and closed results with explicit status labels rather than flattening them into one scoreboard.
+
+
+\chapter{Project Chronology}
+
+
+This chronology is not a lab notebook and not a gate-by-gate changelog. Its function is to show how the program took shape, where its major inflection points occurred, and when the computational, physiological, and therapeutic branches became visibly part of the same research architecture. Whenever date precision would be artificial, phases are used instead.
+
+
+\section{How to read this chronology}
+
+
+The chronology tracks inflection points rather than every local run or every local prototype. A milestone belongs here only if it changed the program's architecture, clarified its evidential logic, or opened a new branch that later mattered for the manuscript. \texttt{Closed} marks a line whose role is already stabilized in the present reading. \texttt{Active} marks a line that is currently shaping the program. \texttt{Horizon} marks a line already named and integrated into the architecture but not yet stabilized as a full experimental front.
+
+
+\section{From problem intuition to program architecture}
+
+
+HIT did not emerge as a finished theory. It emerged as a convergence problem: harmonic and proportional organization kept reappearing across distinct literatures and devices without yet being coordinated as one program. Two consequences followed from that realization. First, computation had to become one of the program's main probes, not as a generic machine-learning exercise but as a way of testing whether descriptors built from relational structure could reorganize cross-modal representation. Second, the experiential and physiological side could not remain anecdotal. It needed its own probe, which became the Beacon line.
+
+The later architecture of the manuscript formalizes that split without making it a division of worlds. Phideus becomes the computational branch. Beacon becomes the physical, acoustic, and experiential branch. PMP enters when the therapeutic line begins to matter as a third register rather than as a side note. The chronology below records when those branches took recognizable shape.
+
+
+\section{Phideus chronology}
+
+\begin{table}[ht]
+\centering
+\caption{Phideus milestones.}
+\label{tab:phideus-milestones}
+\scriptsize
+\begin{tabularx}{\textwidth}{l X X l}
+\toprule
+\textbf{Phase} & \textbf{Milestone} & \textbf{Why it mattered} & \textbf{Status} \\
+\midrule
+Foundational cross-modal & Audio-MIDI baseline on MAESTRO & Made cross-modal retrieval and hard-negative discipline real & closed \\
+DANN diagnostic & Adversarial bias-control closed without stable gain & Forced methodological reset away from shortcut-correction & closed \\
+Post-Gate 4.1 rectification & Descriptor program recenters around ratio-guided logic & Turned descriptor content into the core experimental axis & closed \\
+Ratio re-centering & Gates 4.2--4.5 define music-side descriptor winners & Prepared the scientific validation block & closed \\
+Gate 5B closure & Multi-seed, causal, geometric evidence consolidates E1 & Established strongest closed result of the program & closed \\
+Downstream extension & Gate 6 opens AMT as validation outside retrieval & Tested whether descriptor effects survive outside flagship task & active \\
+Proj.-conditioning & Gate 8: \texttt{pcd > pca > pcd-zero > pcm > ctrl} & Descriptor signal survives deep in projection pipeline & closed \\
+Retrospective reopening & Gate 9 and A10 revisit natural harmony in music & Reopened strong-theory questions without displacing main evidence & retrospective \\
+Mechanism clarification & Gate 10 disentangles descriptor from injection route & Converts compressed retrospective band into causal question & active \\
+New sensor-physics front & E2: Speech$\leftrightarrow$EGG with strong baseline, first null & Extends program outside symbolic music pairing & active \\
+Encoder-regime comparison & S2-P3: WavLM-Large frozen on speech side & Shifts live question from mechanism to encoder regime & active \\
+Synthetic-physical bridge & E3: Audio$\leftrightarrow$Lissajous & Creates first explicitly shared object with Beacon & horizon \\
+Cardiovascular expansion & E4: ECG$\leftrightarrow$PPG & Extends logic beyond acoustics into physiology & horizon \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+This sequence matters because it shows what the current manuscript does and does not claim. The strong computational closure belongs to the first escalon. The second escalon has a serious baseline and a serious null. The later escalones are already architecturally meaningful, but they remain programmatic horizons rather than closed empirical chapters.
+
+
+\section{Beacon chronology}
+
+\begin{table}[ht]
+\centering
+\caption{Beacon device generations.}
+\label{tab:beacon-devices}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l X X l}
+\toprule
+\textbf{Phase} & \textbf{Device} & \textbf{Experimental gain} & \textbf{Tradeoff / open question} & \textbf{Status} \\
+\midrule
+Gen.\ 1 & Beacon Guitar & Sustained harmonic field with highest spectral richness & Fragile, retune-heavy, room-dependent & closed \\
+Gen.\ 2 & Pico Robot / tuning-fork & Portability and repeatability improve & Spectral palette narrows & closed \\
+Gen.\ 3 & Digital / OSC Beacon & Programmability, recall, sensor-ready control & Reopens material vs.\ harmonic structure question & active \\
+Gen.\ 4 & App / distributed & Beacon becomes platform rather than local device & Depends on networked infrastructure & horizon \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Beacon experimental lines.}
+\label{tab:beacon-lines}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l X X l}
+\toprule
+\textbf{Phase} & \textbf{Line} & \textbf{Milestone} & \textbf{Why it mattered} & \textbf{Status} \\
+\midrule
+Personalized calibration & Corazofono & Thoracic resonance reading becomes protocol-bearing & Moves Beacon toward individualized matching & active \\
+Physiological exposure & Bio-signal response & Pre/post designs become legible & Grounds field in measurable bodily change & active \\
+Feedback horizon & EEG-to-harmonics & Neural streams imagined as control inputs to synthesis & Turns exposure into interactive harmonic feedback & horizon \\
+Visible-harmonics & Lissajous / OpenClaw & Harmonic organization becomes capturable as visible structure & Creates strongest material bridge to Phideus E3 & active \\
+Therapeutic conjunction & PMP + Beacon & Field and symbolic work brought into one setting & Opens psychological register of the program & active \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Beacon's history is therefore not just a story of devices becoming newer. It is a story of constraints being solved one by one: sustaining the field, tuning it, transporting it, coupling it to sensors, making it visible, and finally connecting it to therapeutic process without dissolving its experimental identity.
+
+
+\section{Convergence chronology}
+
+\begin{table}[ht]
+\centering
+\caption{Moments of convergence across branches.}
+\label{tab:convergence}
+\scriptsize
+\begin{tabularx}{\textwidth}{l l X X l}
+\toprule
+\textbf{Phase} & \textbf{Branches} & \textbf{What converged} & \textbf{Why it mattered} & \textbf{Status} \\
+\midrule
+Descriptor-guided closure & Phideus $\to$ HIT & Computational evidence disciplines the general theory & Program gains a real closed positive branch & closed \\
+Beacon stabilization & Beacon $\to$ HIT & Sustained harmonic field becomes reproducible object & Experiential branch gains probe status & closed \\
+Therapeutic conjunction & Beacon + PMP & Harmonic field and symbolic descent jointly observable & Psychological register enters the architecture & active \\
+Shared object emergence & Phideus + Beacon & Lissajous as object generable, visible, and learnable & First direct shared experimental object & active \\
+Infrastructure horizon & Beacon + Phideus + HAT & Sensing and actuation imagined together & Program shifts toward environmental design questions & horizon \\
+Long-horizon naming & HIT + HAT + PPU & PPU and intuitive coprocessor name future coupling & Gives program a technological horizon without closure & horizon \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The convergence recorded here should not be read as reduction. What converges is not one final level of explanation, but a family of branches that increasingly constrain and retroactively reshape one another.
+
+
+\section{Present cut}
+
+
+At the cut of this manuscript, the program is asymmetrical but coherent. Phideus has one strong closed computational front, one active new-domain front, one retrospective clarification branch, and two named horizons beyond the current evidence. Beacon has a stabilized device logic, active experimental lines, and a clear technological horizon. PMP plus Beacon has already become a repeated field practice whose mechanism is still being formalized. The manuscript is written exactly at that moment: after the probes have become real, but before their convergence has hardened into a single methodological or technological closure.
+
+
+\chapter{Mathematical Substrate of Harmonic Activation}
+
+
+This appendix gathers the mathematical substrate compressed in Chapter 10. It makes the formal scaffolding explicit and places the three convergent lines within a broader mathematical family. What remains open can then be stated at the same level of exactness.
+
+
+\section{Why the formal substrate is separated}
+
+
+The activation problem asks a specific question: what kind of perturbation can read a stored harmonic organization without simply overwriting it through premature relocking? Chapter 10 answered that question narratively and through its motivating physical observation. The present appendix records the mathematical reasons $\phi$ becomes the clearest current candidate and states them in a notation explicit enough to organize later proof work.
+
+Write the phase space of an $N$-harmonic system as the torus
+
+$$
+\mathbb{T}^N = \mathbb{R}^N / \mathbb{Z}^N.
+$$
+
+Let the stored organization be represented by a function
+
+$$
+f(\theta) = \sum_{k \in \mathbb{Z}^N} \hat f_k\, e^{2\pi i\, k \cdot \theta},
+\qquad \theta \in \mathbb{T}^N,
+$$
+
+whose dominant Fourier support lies on low-order integer lattice modes. Let a probe be introduced as a shift orbit
+
+$$
+\theta_n = \theta_0 + n\alpha \pmod 1,
+\qquad \alpha \in \mathbb{R}^N,
+$$
+
+and let the finite readout be
+
+$$
+R_N(f;\alpha,\theta_0) = \frac{1}{N}\sum_{n=0}^{N-1} f(\theta_n).
+$$
+
+Expanding along Fourier modes gives
+
+$$
+R_N(f;\alpha,\theta_0)
+=
+\sum_{k \in \mathbb{Z}^N}
+\hat f_k\, e^{2\pi i\, k \cdot \theta_0}
+\frac{1 - e^{2\pi i N\, k \cdot \alpha}}
+{N\left(1 - e^{2\pi i\, k \cdot \alpha}\right)}.
+$$
+
+This is the formal core of the activation problem. Storage privileges recurrence, commensurability, closure, and basin formation. Retrieval privileges a probe that is structured enough to traverse the stored organization yet resistant enough to immediate rational capture that the structure is read before it is reimposed. If
+
+$$
+\|x\|_{\mathbb{T}} = \min_{m \in \mathbb{Z}} |x - m|,
+$$
+
+then premature relocking occurs whenever
+
+$$
+\|k \cdot \alpha\|_{\mathbb{T}} \ll 1
+$$
+
+for low-order modes $k$. The mathematical question is whether some irrationals are systematically better than others at keeping those low-order denominators away from zero while still distributing a query across the space in a maximally even way.
+
+
+\section{Hurwitz extremality and continued fractions}
+
+
+The first formal reason $\phi$ matters is classical Diophantine approximation. If an irrational number is easy to approximate by rationals with small denominators, then its iterates will repeatedly fall near commensurate structure. If it is hard to approximate, premature lock becomes less likely. Phi is extremal in this precise sense.
+
+With
+
+$$
+\phi = \frac{1 + \sqrt{5}}{2},
+$$
+
+so that
+
+$$
+\phi^2 = \phi + 1.
+$$
+
+Its continued fraction expansion is
+
+$$
+\phi = [1;1,1,1,\ldots].
+$$
+
+The convergents $p_m/q_m$ generated by that continued fraction satisfy the Fibonacci recursion
+
+$$
+p_{m+1} = p_m + p_{m-1},
+\qquad
+q_{m+1} = q_m + q_{m-1},
+$$
+
+so that
+
+$$
+\frac{p_m}{q_m} \to \phi
+\qquad\text{with}\qquad
+q_m = F_m
+$$
+
+up to the usual indexing convention. That infinite repetition of $1$ makes $\phi$ the most difficult irrational to approximate too well by rationals. Hurwitz's theorem gives the canonical result \parencite{hurwitz_1891}:
+
+$$
+\left|\alpha - \frac{p}{q}\right| < \frac{1}{\sqrt{5}\,q^2}
+$$
+
+for infinitely many rational approximations $p/q$ to any irrational $\alpha$, and $\phi$ is the case for which the constant $1/\sqrt{5}$ is sharp. The point is not that $\phi$ satisfies a universal lower bound against every rational approximation. The point is that no smaller universal constant can replace $1/\sqrt{5}$, and $\phi$ marks that extremal limit. In the present context the implication is qualitative but exact enough: if storage is supported by recurrent low-denominator proportional relations, then $\phi$ is the clearest candidate for a query that resists collapsing back into those same low-order rational approximants too quickly.
+
+This is why Chapter 10 described $\phi$ as maximally non-locking rather than merely irrational. The point is not that irrationality alone suffices. Many irrationals drift away from simple rationality; $\phi$ does so in the most uniform and resistant way available in one dimension. Continued fractions make that claim legible without metaphysical rhetoric. What appears experimentally as a relation that does not immediately settle into integer-ratio lock appears formally as the hardest irrational to capture by rational scaffolding.
+
+
+\section{Equidistribution and the three-distance problem}
+
+
+Resistance to rational approximation is only half of the story. A useful query should not merely avoid commensurate capture. It should also cover the phase circle evenly enough that the stored organization can be sampled rather than struck at the same local seam over and over again. This is where the Weyl--S\'os line becomes relevant.
+
+For a scalar rotation, define
+
+$$
+x_n = \{n\alpha\},
+\qquad n = 0,1,2,\ldots,
+$$
+
+and its star discrepancy
+
+$$
+D_N^*(\alpha)
+=
+\sup_{0 \le t \le 1}
+\left|
+\frac{1}{N}\#\{0 \le n < N : x_n < t\} - t
+\right|.
+$$
+
+Weyl's equidistribution theorem establishes that for irrational $\alpha$,
+
+$$
+D_N^*(\alpha) \to 0
+\qquad (N \to \infty)
+$$
+
+in the long run \parencite{weyl_1916}. Rational rotations revisit a finite orbit. Irrational rotations eventually cover the circle. If $g$ has bounded variation, Koksma--Hlawka gives the readout-error bound
+
+$$
+\left|
+\frac{1}{N}\sum_{n=0}^{N-1} g(x_n)
+-
+\int_0^1 g(x)\,dx
+\right|
+\le
+V(g)\, D_N^*(\alpha),
+$$
+
+so discrepancy directly controls finite sampling error. The three-distance theorem, associated in this context with S\'os, sharpens the finite picture \parencite{sos_1958}: for the first $N$ iterates of an irrational rotation, the gaps between neighboring points take at most three distinct lengths. $\phi$ and the wider family of noble-number rotations are distinguished because their finite coverage is maximally even among such rotations.
+
+This is exactly why the golden angle enters radial MRI \parencite{winkelmann_2007}. With
+
+$$
+\gamma = \frac{2\pi}{\phi^2} = \pi(3-\sqrt{5}),
+$$
+
+successive spokes are placed by
+
+$$
+\theta_n = n\gamma \pmod{2\pi},
+\qquad
+k_n(r) = r(\cos\theta_n,\sin\theta_n),
+$$
+
+which yields unusually even finite coverage of Fourier space for arbitrary acquisition windows.
+
+This does not prove that $\phi$ is always the optimal query for every retrieval problem. It does establish something narrower and still powerful: a $\phi$-driven rotation distributes a probe through phase space with unusually low clustering and unusually even local coverage. In storage language, recurrence forms a patterned basin. In retrieval language, $\phi$ forms a disciplined way of visiting that basin without falling immediately into one local commensurate trap.
+
+
+\section{KAM and the golden-mean torus}
+
+
+The KAM line adds the dynamical intuition. Invariant tori with frequency vector $\omega$ survive perturbation most robustly when $\omega$ satisfies a Diophantine non-resonance condition of the form
+
+$$
+|k \cdot \omega|
+\ge
+\frac{\gamma}{\|k\|^{\tau}}
+\qquad
+\text{for all } k \in \mathbb{Z}^d \setminus \{0\},
+$$
+
+for some $\gamma > 0$ and $\tau > d-1$. Under perturbation, invariant tori do not all fail at the same rate. In the standard-map setting,
+
+$$
+I_{n+1} = I_n + K \sin\theta_n,
+\qquad
+\theta_{n+1} = \theta_n + I_{n+1} \pmod{2\pi},
+$$
+
+the golden-mean rotation number
+
+$$
+\rho_g = \phi - 1 = \frac{1}{\phi}
+$$
+
+is classically the emblematic last torus to break \parencite{greene_1979}. In the language of nonlinear dynamics, it is the most familiar boundary case between order and chaos. That fact matters here because the retrieval conjecture is not only arithmetic. It is also dynamical.
+
+If one asks which perturbations remain structured under pressure without collapsing into early resonance, the golden-mean case repeatedly appears at the boundary between order and breakdown. The relevant analogy for HIT is disciplined and limited. We are not claiming that every harmonic manifold is literally a KAM torus. We are claiming that the same relation singled out by Diophantine extremality reappears in a dynamical setting where robustness under perturbation matters. The golden-mean torus is not merely irrational. It is dynamically privileged in the exact regime where lock and drift must be held in a productive tension.
+
+That is why the KAM line supports Chapter 10 without replacing it. Storage required recurrent lock. Retrieval requires a perturbation that remains ordered without simply re-entering the same lock. The golden-mean case provides one of the strongest dynamical precedents for that kind of structured non-capture.
+
+
+\section{Quasiperiodic operators and the almost Mathieu line}
+
+
+The almost Mathieu operator extends the family resemblance into quasiperiodic spectral theory. Its standard form is
+
+$$
+\bigl(H_{\lambda,\alpha,\theta}u\bigr)_n
+=
+u_{n+1} + u_{n-1} + 2\lambda \cos\!\bigl(2\pi(n\alpha+\theta)\bigr)u_n,
+$$
+
+with eigenvalue equation
+
+$$
+H_{\lambda,\alpha,\theta}u = E u.
+$$
+
+Equivalently, the dynamics can be written through transfer matrices
+
+$$
+\begin{pmatrix}
+u_{n+1}\\
+u_n
+\end{pmatrix}
+=
+A_n(E)
+\begin{pmatrix}
+u_n\\
+u_{n-1}
+\end{pmatrix},
+\qquad
+A_n(E)
+=
+\begin{pmatrix}
+E - 2\lambda \cos\!\bigl(2\pi(n\alpha+\theta)\bigr) & -1\\
+1 & 0
+\end{pmatrix}.
+$$
+
+The point here is not to import the full apparatus of the Ten Martini Problem into HIT, but to register that quasiperiodic forcing at golden-mean-type frequencies repeatedly organizes transitions between localization, transport, and criticality in mathematically nontrivial ways \parencite{avila_jitomirskaya_2009}. Under Aubry--Andr\'e duality, $\lambda \leftrightarrow 1/\lambda$, so
+
+$$
+\lambda = 1
+$$
+
+is the self-dual critical point. What matters for the present appendix is the recurrence of the same arithmetic structure across formally different problems.
+
+Quasiperiodic operators do not prove the Harmonic Activation Lemma. They do, however, reinforce the idea that maximally irrational spacing is not a marginal curiosity. It becomes structurally visible wherever ordered but non-periodic forcing changes what kinds of states remain accessible. In other words, the almost Mathieu line belongs here as a convergent formal echo: the same kind of arithmetic resistance that matters for non-locking queries also matters in operators where spectral accessibility is reorganized by quasiperiodic structure.
+
+
+\section{Noble numbers, higher-dimensional caveat, and the Harmonic Activation Lemma}
+
+
+$\phi$ is the one-dimensional paradigm, not necessarily the whole story. In higher-dimensional settings the relevant family is broader: noble numbers and their associated frequency vectors inherit the same kind of continued-fraction or multidimensional Diophantine hardness that makes $\phi$ privileged in the scalar case. The scalar case is therefore the first exact instance of a wider family of hard-to-lock, evenly distributing queries.
+
+The admissibility condition is no longer scalar irrationality alone. A probe vector $\alpha \in \mathbb{R}^N$ must satisfy the Kronecker-type independence condition
+
+$$
+k \cdot \alpha \notin \mathbb{Z}
+\qquad
+\text{for all } k \in \mathbb{Z}^N \setminus \{0\},
+$$
+
+equivalently, $1,\alpha_1,\ldots,\alpha_N$ must be linearly independent over $\mathbb{Q}$. Powers of $\phi$ fail that condition in dimensions above two because
+
+$$
+\phi^2 - \phi - 1 = 0.
+$$
+
+The correct higher-dimensional generalization therefore requires a noble-number vector rather than powers of a single scalar.
+
+Two finite diagnostics make the conjectural balance explicit. First, define a low-order relocking proxy
+
+$$
+\Lambda_Q(\alpha)
+=
+\min_{0 < \|k\|_1 \le Q} \|k \cdot \alpha\|_{\mathbb{T}},
+$$
+
+where larger $\Lambda_Q$ means stronger resistance to low-order rational capture. Second, define the finite orbit discrepancy on $\mathbb{T}^N$ by
+
+$$
+D_N^*(\alpha)
+=
+\sup_{B \in \mathcal{B}}
+\left|
+\frac{1}{N}\sum_{n=0}^{N-1}\mathbf{1}_B(\theta_0+n\alpha) - |B|
+\right|,
+$$
+
+with $\mathcal{B}$ the axis-aligned boxes in $\mathbb{T}^N$. A good query should keep $\Lambda_Q(\alpha)$ large while driving $D_N^*(\alpha)$ low.
+
+The conjectural core can then be stated in a disciplined way.
+
+\textbf{Harmonic Activation Lemma (conjectural form).} Let
+
+$$
+f(\theta) = \sum_{k \in \mathbb{Z}^N} \hat f_k\, e^{2\pi i\, k \cdot \theta}
+$$
+
+store organization primarily through recurrent integer-ratio or low-denominator commensurate structure on $\mathbb{T}^N$, and let
+
+$$
+R_N(f;\alpha,\theta_0)
+=
+\frac{1}{N}\sum_{n=0}^{N-1} f(\theta_0+n\alpha)
+$$
+
+be the finite readout generated by a query vector $\alpha$. Then the conjecture is that, among bounded-type irrational queries satisfying the independence condition above, noble-number vectors minimize finite-step discrepancy while maximizing resistance to low-order relocking. In one dimension, $\phi$ is the clearest candidate. In higher dimensions, the relevant generalization belongs to the noble-number family.
+
+What remains open is the proof that this principle is optimal in the general case. The manuscript therefore treats the lemma as a structural conjecture precise enough to organize formal work, computational comparison, and physical experiment. That precision is already a gain: theorem, counterexample, or refinement become possible futures.
+
+
+\section{External convergences}
+
+
+Several additional lines sit near this appendix without carrying its main argumentative weight. Prime-weighted interference, Penrose-style quasiperiodic coding, and spectral-gap literatures all suggest that non-periodic yet highly ordered spacing can create unusually robust forms of coverage, discrimination, or storage. These are important convergences, but they remain secondary. The formal core of the appendix does not stand or fall with them.
+
+One convenient external example is the prime-weighted interference family \parencite{takalo_2026},
+
+$$
+C_{P,s}(x)
+=
+\sum_{p \le P} p^{-s}\cos(x\log p),
+$$
+
+whose critical behavior is concentrated at
+
+$$
+s = \frac{1}{2}.
+$$
+
+Their value is therefore twofold. First, they indicate that the activation conjecture belongs to a larger mathematical landscape rather than to one local technical trick. Second, they mark directions for future theoretical work once the main lemma has been sharpened further. At the current stage they should be read as convergent horizons, not as premises the book must load in order to justify its claim.
+
+
+\chapter{Working Conceptual Synthesis}
+
+\epigraph{\emph{One frequency alone can oscillate. Two frequencies can enter into relation. From relation comes interference; from interference, pattern; from pattern, the possibility of differential uptake.}}{}
+
+
+\section{General statement}
+
+Harmonic Information Theory proposes that harmony should be understood not as a simple matter of ideal mathematical proportions, nor as a reedition of the Pythagorean tradition, but as an emergent property of dynamic systems seeking forms of recurrent stability, energetic efficiency, and effective informational processing within complex media.
+
+From this perspective, harmony does not reside in abstract perfection or in absolute numerical rigidity. It appears, rather, as a form of dynamic order: an organization stable enough to sustain regularity, yet flexible enough to allow adaptation, recognition, variation, and information processing. The general hypothesis is that so-called simple harmonic ratios tend to reappear across different systems because they constitute configurations of high recurrence and low dynamic friction. Their relevance, therefore, would not be only aesthetic or musical, but also physical, biological, ecological, and informational. The same program now adds a complementary claim: if some relations support storage through recurrence, other relations may support retrieval through structured non-locking query.
+
+
+\section{What is not being proposed}
+
+This approach does not defend a rigid Pythagorean conception of harmony. It does not claim that there are pure mathematical proportions which, by themselves and universally, produce consonance or value. Nor does it assume that natural harmony is identical across all instruments, bodies, media, or cultures.
+
+On the contrary, it begins from the premise that harmonic relations change according to the physical medium in which they unfold. Even if a system is tuned according to certain ideal relations, the concrete materiality of that system introduces divergences: resonances, dampings, distortions, limits, plasticities. Natural harmony, then, would not be a fixed mathematical essence, but a situated and relational mode of dynamic stabilization.
+
+
+\section{Central hypothesis}
+
+The central hypothesis may be stated as follows: simple harmonic ratios tend to reappear in oscillatory systems because they maximize dynamic recurrence and minimize the energetic and informational cost of processing, without completely eliminating the variability required for adaptation.
+
+This implies that natural harmony should not be conceived as static perfection, but as adaptive dynamic stability. Optimal deviation would not be an error to eliminate, but a necessary condition for the system to recognize, differentiate, interpret, and reorganize information. Put differently: perfect rigidity would be energetically costly and even unviable for living or complex systems. The most fertile harmony is not that of freezing, but that of flexible coherence.
+
+
+\section{Natural harmony as dynamic stability}
+
+Within this framework, natural harmony does not reside in mathematical rigidity, but in dynamic stability. That stability must combine two simultaneous traits: it must be stable enough to sustain identifiable recurrences, and dynamic enough to tolerate variation, error, deviation, and adaptation.
+
+Consonance, then, would not be an absolute property of an isolated interval. It would be the result of a complex relation among multiple factors: the ratio between fundamentals, the timbres involved, the resonant materiality, the perceptual system, the ecological context, and also the cultural context. Schematically,
+$$
+\mathrm{Consonance} = F(\text{ratio},\; \text{timbre}_1,\; \text{timbre}_2,\; \text{context},\; \text{auditory system}).
+$$
+
+This shifts the discussion away from the question of ``the correct interval in itself'' toward the question of which relational configurations favor stability, recognition, and efficient processing.
+
+
+\section{Information: operational definition}
+
+Within this theory, the notion of information must be broadened. A purely statistical definition is not enough, even though Shannon's theory remains fundamental. A possible operational definition would be the following: information is a detectable pattern or structure in signals or systems that, for a given observer, reduces uncertainty about possible states, increases the comprehensibility of the system, and produces functional effects in its dynamics.
+
+This definition articulates three dimensions: Shannon, where information is reduction of uncertainty; algorithmic, where information is increased compressibility or structural intelligibility; and functional or ecological, where information is a difference that produces effects in a system. From this perspective, simple harmonic patterns would be informationally relevant because they operate as detectable constraints, as forms of order that allow the system to anticipate, compress, interpret, and respond at lower cost.
+
+
+\section{Storage, recurrence, and entropy}
+
+One of the central intuitions of this approach is that harmony can be understood in relation to recurrence. When certain configurations repeat, reappear, or stabilize over time, the system exhibits regularities that can be measured and compared. At this point the importance of RQA (Recurrence Quantification Analysis) emerges, as a tool that makes it possible to quantify the temporal structure of a dynamic system through its recurrence patterns.
+
+Consonance, in this framework, may correlate with high recurrence profiles or with returns to relatively stable patterns along the continuum of ratios. Thus, when two oscillations relate according to simple proportions, for example $3{:}2$, the resulting system may exhibit greater dynamic recurrence. That recurrence is not merely mechanical repetition: it is also a form of reduction of effective entropy without reaching zero entropy. Zero entropy would not be the ideal of the system here, but its immobility or its dynamic death. A living or adaptive system requires a certain margin of fluctuation. For that reason, natural harmony should not be equated with maximal rigidity, but with an optimal zone between order and variability.
+
+In this form, recurrence names the storage side of harmonic information. A system stores by stabilizing a legible basin, a repeatable pattern, or a low-friction manifold of return. Retrieval poses a different problem: how to read a stored organization without simply reimposing the same commensurate logic that helped store it. HIT's current answer is conjectural but increasingly precise. $\phi$ enters here as the clearest one-dimensional candidate for a structured non-locking query. The claim is specific: not that $\phi$ is the secret of all harmony, but that $\phi$-like relations may help activate and traverse a stored harmonic organization without immediate relocking.
+
+
+\section{Activation, query, and retrieval}
+
+If storage is the capacity of a system to stabilize harmonic organization through recurrence, activation names the complementary capacity: the introduction of a perturbation structured enough to traverse the stored basin without collapsing into it. The formal substrate of this claim is developed in the mathematical appendix on harmonic activation. Here the conceptual point is simpler and more general.
+
+A query, in HIT's sense, is not a random disturbance. It is a relational intervention whose own proportional structure resists immediate rational capture by the stored organization. $\phi$ is the one-dimensional paradigm because it is the hardest irrational to approximate by rationals with small denominators, and because its iterates distribute most evenly across the phase circle among bounded-type irrationals. But the conceptual point extends beyond any single number: what matters is the existence of a regime of structured non-locking, in which a probe can read organization without reimposing it.
+
+Retrieval, then, is the process by which activation makes stored structure newly available. It is not mere repetition of what was stored, nor destruction of it, but a disciplined traversal that converts latent organization into accessible information. The storage--activation--retrieval triad is one of the manuscript's central conceptual contributions, and it names a dynamic that is physical, informational, and potentially biological at once.
+
+
+\section{Energetic efficiency and processing cost}
+
+The theory proposes that simple harmonic ratios are not only pleasant or frequent: they are also efficient. Their recurrent stability makes it possible to reduce the need for constant correction, thereby lowering the total cost of processing.
+
+This intuition can be considered in dialogue with two frameworks. First, Landauer's principle: if processing, erasing, or correcting information has an energetic cost, then patterns requiring less correction or less reconfiguration will tend to be more efficient. Second, the Free Energy Principle or variational free energy: if a system seeks to reduce prediction error or inferential cost, then the most recurrent and stable patterns may function as configurations that facilitate prediction, compression, and adjustment.
+
+In this sense, simple harmonic ratios would appear as partial solutions of efficiency: they reduce dissipative cost and also reduce inferential cost. Natural harmony would therefore be a possible signature of informational efficiency in complex oscillatory systems. At the same time, the activation conjecture suggests that storage efficiency and retrieval legibility may require different proportional regimes, so that the most efficient system is not the one that maximizes recurrence alone, but the one that maintains access to its stored organization through structured non-locking perturbation.
+
+
+\section{From the physical system to the interpreting system}
+
+Harmony cannot be explained solely from the external physics of the phenomenon. The human body, and more broadly any system capable of detecting regularities, is also a physical system that recognizes, processes, compresses, and normalizes patterns. For that reason, the study of natural harmony should not be limited to the mechanical analysis of vibrations or frequencies. It must also include the study of the bodily, perceptual, and biological computation that makes certain configurations emerge as salient, interpretable, or preferable.
+
+This shifts the classical question. It is no longer only a matter of which proportions are present in the world, but of how certain physical and biological systems become capable of detecting those proportions as relevant information. The activation framework adds a further layer: it is also a matter of how systems query, traverse, and interpret stored proportional organization, not only how they detect it in the first place.
+
+
+\section{Organized chaos and recurrent stability}
+
+From this point of view, natural harmony may be described as a form of organized chaos. It is not the absence of variability, but the emergence of robust regularities within a medium of complex dynamics. The key notion here is that of recurrent stability. This stability does not cancel movement or difference, but organizes their repetition efficiently. What is harmonic would then be whatever manages to persist, reappear, and sustain itself amid variations, because its structure offers advantages of compression, recognition, or energetic economy. In that sense, natural harmony could be understood as the signature of embodied informational efficiency.
+
+
+\section{Acoustic niche hypothesis, biosemiosphere, and spiritual homeostasis}
+
+Krause's acoustic niche hypothesis offers an important bridge for extending this theory beyond human music. In complex soundscapes, biophonic components distribute their vocalizations across spectral and temporal domains in such a way that mutual interference is reduced and communicative and energetic efficacy is maximized. This suggests that harmonic organization may appear as an ecological strategy for partitioning sonic space, not necessarily as a consciously aesthetic pursuit.
+
+Another strong axis of the proposal is the idea of a biosemiosphere, in which the recurrence of harmonic ratios functions as a system of compression across biosemiotic levels. Certain simple and coherent oscillatory patterns would allow systems to better interpret their material constraints, store and transmit relevant regularities, reduce the energetic cost of updating their interpretive mechanisms, and sustain more efficient ecological relations. Repetition would not be a mere return of the same, but a physical foundation of interpretation.
+
+Within this language there appears a particularly powerful notion: spiritual homeostasis. As a working hypothesis, it names the state or process through which a system develops a sensitivity to configurations of consonance, activation, and reorientation that favor its biological, ecological, and informational stability. It is an expanded form of homeostasis, one that concerns not only immediate physiological variables, but also patterns of resonance, sense, orientation, and coherence across levels of the system. In this key, developing the sense of consonance means becoming capable of detecting and inhabiting configurations that reduce unnecessary conflict, improve integration, and favor relational efficiency, while remaining open to the kinds of activation through which a stored order becomes newly available. It is a strong hypothesis, still open, but conceptually fertile.

@@ -1,0 +1,23 @@
+# LaTeX build artifacts
+LaTeX/*.aux
+LaTeX/*.bbl
+LaTeX/*.bcf
+LaTeX/*.blg
+LaTeX/*.fdb_latexmk
+LaTeX/*.fls
+LaTeX/*.log
+LaTeX/*.out
+LaTeX/*.pdf
+LaTeX/*.run.xml
+LaTeX/*.synctex.gz
+LaTeX/*.toc
+LaTeX/*.lof
+LaTeX/*.lot
+
+# Binary files
+*.png
+*.jpg
+*.docx
+
+# Internal working documents
+Insumos/
