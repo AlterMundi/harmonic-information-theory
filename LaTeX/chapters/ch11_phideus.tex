@@ -250,15 +250,15 @@ This distinction also stabilizes the reading of the chapter's own evidence. D4 a
 \section{The central result: descriptor-guided cross-modal learning works}
 
 
-The strongest closed result of Phideus remains the multi-seed validation of the canonical dual arm in Escalon 1. Across five independent seeds, d4a4 reaches a mean S of 84.1 percent with a standard deviation of 2.3 percentage points, while the unguided baseline D0 reaches 75.2 percent with the same standard deviation. The effect size is large, Cohen d = 4.50, and the distributions do not overlap: the weakest guided seed remains above the strongest unguided one. The result is not a fortunate run. It is a stable shift in the behavior of the system, and it must be read against the explicit pipeline just defined: descriptor content, route of injection, projection into shared space, and only then retrieval.
+The strongest closed result of Phideus remains the descriptor-guided validation of the canonical dual arm in Escalon 1. The d4a4 arm is currently supported by five evaluation seeds over a single trained checkpoint, yielding a reference mean S of 84.1 percent with a standard deviation of 2.3 percentage points. The unguided baseline D0, evaluated across five independent training seeds, reaches 75.2 percent with the same standard deviation. The gap is therefore large and stable enough to anchor the chapter's main claim, but the two rows should not be read as if they expressed the same kind of variance: d4a4 currently measures evaluator variance around a fixed trained model, whereas D0 measures full training variance across reruns. Even under that caveat, the guided arm remains well above the unguided baseline, and the result must be read against the explicit pipeline just defined: descriptor content, route of injection, projection into shared space, and only then retrieval.
 
-That retrieval advantage is supported by three causal lines of evidence. The first is inference-time ablation. When the A4 signal is zeroed at evaluation while keeping the trained weights fixed, performance collapses from 83.8 percent to 7.8 percent. The descriptor is not acting as decorative side information. The model depends on it. The second is parameter-matched degradation. Random, zeroed, or temporally shuffled substitutes fall back to the unguided band, leaving a causal gap of 9.4 percentage points between the real descriptor and the strongest degraded control. The advantage therefore comes from structured information rather than from added capacity alone. The third is pre-registration. Prediction matrices and admissible inference rules were written before the main readout, constraining interpretation before the relevant numbers were seen. That control does not make post-hoc reasoning impossible, but it sharply limits the most common forms of confirmation drift \parencite{pearl_2009}.
+That retrieval advantage is supported by three causal lines of evidence. The first is inference-time ablation. When the A4 signal is zeroed at evaluation while keeping the trained weights fixed, performance collapses from 83.8 percent to 7.8 percent. The descriptor is not acting as decorative side information. The model depends on it. The second is parameter-matched degradation. Random, zeroed, or temporally shuffled substitutes fall back to the unguided band, preserving an 8.0-to-9.8-percentage-point causal gap between the real descriptor and its degraded controls. The advantage therefore comes from structured information rather than from added capacity alone. The third is pre-registration. Prediction matrices and admissible inference rules were written before the main readout, constraining interpretation before the relevant numbers were seen. That control does not make post-hoc reasoning impossible, but it sharply limits the most common forms of confirmation drift \parencite{pearl_2009}.
 
 The evidence does not stop at retrieval. Cross-encoder alignment, measured by CKA, rises by roughly 82 percent in the guided condition, from 0.435 in D0 to as high as 0.794 in the best aligned arm \parencite{kornblith_2019}. At the same time, the descriptor-guided arms preserve roughly 29 percent more cross-modal information before the projection bottleneck. The descriptor is therefore not merely helping the model rank partners more effectively. It is altering the geometry through which both encoders are brought into relation.
 
 Mechanistic evidence strengthens the same reading. Under projection conditioning, the best arm reaches 84.2 percent, the program's highest single-seed retrieval score. Even when only one side is conditioned late in the pipeline, the guided arm remains above the unguided control. Descriptor signal survives injection at the level of the projection head itself. This matters because it shows that the effect is not tied only to early token interaction. Guidance can remain operative all the way down to the final mapping into shared space.
 
-The front also closes strongly at the level of discrimination difficulty. Descriptor-guided arms sustain hard-negative accuracy above 94 percent. These negatives come from the same musical piece at different temporal locations, so timbre, recording conditions, and style remain nearby while local identity changes. The model is not merely learning piece signature. It is learning temporal correspondence with fine resolution.
+The front also closes strongly at the level of discrimination difficulty. Hard-negative accuracy stays above 94 percent across the canonical arms, including the unguided baseline under the comparable Gate 5B regime. These negatives come from the same musical piece at different temporal locations, so timbre, recording conditions, and style remain nearby while local identity changes. The hard-negative probe therefore confirms fine temporal discrimination across the front, while the descriptor-specific advantage has to be read more strongly in retrieval, CKA, and pre-projection retention.
 
 \begin{table}[ht]
 \centering
@@ -269,27 +269,27 @@ The front also closes strongly at the level of discrimination difficulty. Descri
 \toprule
 Dimension & Test & Result & Interpretation \\
 \midrule
-Retrieval & Multi-seed replication & $84.1\% \pm 2.3$pp & Replicable advantage, $d = 4.50$ \\
+Retrieval & Eval-seed reference & $84.1\% \pm 2.3$pp (\texttt{d4a4}) & Strong guided reference; full training-seed replication pending \\
 Causal (ablation) & Inference-time zeroing & $83.8\% \to 7.8\%$ & Descriptor causally necessary \\
-Causal (controls) & Parameter-matched degradation & $+9.4$pp gap & Information, not parameters \\
+Causal (controls) & Parameter-matched degradation & $+8.0$ to $+9.8$pp gap & Information, not parameters \\
 Geometric & CKA alignment & $+82\%$ & Representational reorganization \\
 Information & Pre-projection retention & $+29\%$ & More cross-modal info preserved \\
 Mechanistic & Projection conditioning & $84.2\%$ (record) & Signal survives deep in pipeline \\
-Fine-grained & Hard negatives & $> 94\%$ & Temporal identity, not just piece \\
+Fine-grained & Hard negatives & $> 94\%$ across canonical arms & Strong temporal identity resolution across the front \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \begin{table}[ht]
 \centering
-\caption{Multi-seed replication of cross-modal retrieval, Escalon~1 ($n = 5$ seeds).}
+\caption{Canonical cross-modal retrieval reference across the main Escalon~1 arms ($n = 5$ per row; \texttt{d4a4} uses evaluation seeds over a fixed checkpoint).}
 \label{tab:escalon1_multiseed}
 \footnotesize
 \begin{tabular}{@{}lcccccc@{}}
 \toprule
 Arm & Mean $S$ & SD & Range & $\Delta$ vs D0 & Cohen $d$ & Sig. \\
 \midrule
-d4a4 & 84.1\% & 2.3pp & 82.0--86.4 & $+8.9$pp & 4.50 & $p < 0.001$ \\
+d4a4 & 84.1\% & 2.3pp & 82.6--88.4 & $+8.9$pp & pending & pending \\
 d4-a4r & 81.2\% & 2.5pp & 78.4--83.4 & $+6.0$pp & 2.50 & $p < 0.01$ \\
 a4r & 80.7\% & 1.9pp & 79.4--84.0 & $+5.5$pp & 2.63 & $p < 0.01$ \\
 D0 & 75.2\% & 2.3pp & 71.8--77.4 & --- & --- & baseline \\

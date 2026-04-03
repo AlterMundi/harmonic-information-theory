@@ -149,7 +149,7 @@ This appendix gathers the quantitative evidence that the main body either summar
 
 Five status labels are used throughout the appendix. \texttt{Closed positive} marks a result that supports the main evidential line under a fixed protocol. \texttt{Closed null} marks a condition that completed its comparison without defensible lift over baseline. \texttt{Closed negative useful} marks a condition whose failure clarified mechanism or domain limits. \texttt{Retrospective} marks a branch that is informative but not central to the present flagship claim. \texttt{Provisional} marks runs that already constrain interpretation but have not yet reached their final comparable endpoint.
 
-Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denotes the conservative score \texttt{min(A2M, M2A)} for the relevant evaluation pool. In Escalon 2, bootstrap intervals are grouped by speaker; in Escalon 1, the canonical summaries use the already stabilized multi-seed or gate-level readings rather than re-deriving the entire raw evaluation tree here. Where \texttt{best} and \texttt{final} differ, both are reported explicitly to avoid flattening early peaks into final closures.
+Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denotes the conservative score \texttt{min(A2M, M2A)} for the relevant evaluation pool. In Escalon 2, bootstrap intervals are grouped by speaker; in Escalon 1, the canonical summaries use stabilized reference readings rather than re-deriving the entire raw evaluation tree here. Where a row comes from evaluation seeds over a fixed checkpoint rather than from full training-seed reruns, that status is marked explicitly. Where \texttt{best} and \texttt{final} differ, both are reported explicitly to avoid flattening early peaks into final closures.
 
 
 \section{Escalon 1 - Canonical closed results}
@@ -159,15 +159,15 @@ The body of Chapter 11 uses Escalon 1 as the strongest demonstration that descri
 
 \begin{table}[ht]
 \centering
-\caption{Escalon 1 flagship retrieval summary. Multi-seed closed comparison for the canonical arms used in the main chapter.}
+\caption{Escalon 1 flagship retrieval summary. Canonical reference comparison for the main arms used in Chapter~11.}
 \label{tab:e1-flagship}
 \footnotesize
 \begin{tabularx}{\textwidth}{l l c c X l}
 \toprule
-\textbf{Arm} & \textbf{Descriptor route} & \textbf{\texttt{S} (multi-seed)} & \textbf{$\Delta$ vs \texttt{D0}} & \textbf{Reading} & \textbf{Status} \\
+\textbf{Arm} & \textbf{Descriptor route} & \textbf{\texttt{S} (canonical ref.)} & \textbf{$\Delta$ vs \texttt{D0}} & \textbf{Reading} & \textbf{Status} \\
 \midrule
 \texttt{D0} & none & $75.2\% \pm 2.3$ & $0.0$ & unguided shared-space baseline & closed baseline \\
-\texttt{d4a4} & dual guided (\texttt{D4+A4}) & $84.1\% \pm 2.3$ & $+8.9$ & flagship guided arm & closed positive \\
+\texttt{d4a4} & dual guided (\texttt{D4+A4}) & $84.1\% \pm 2.3$ (eval-seed) & $+8.9$ & flagship guided arm; full training-seed replication pending & positive reference \\
 \texttt{a4r} & audio-side rev.\ cross-att & $80.7\% \pm 1.9$ & $+5.5$ & strongest single-descriptor arm & closed positive \\
 \texttt{d4-a4r} & hybrid (\texttt{D4}+\texttt{A4r}) & $81.2\% \pm 2.5$ & $+6.0$ & hybrid guided arm & closed positive \\
 \bottomrule
@@ -187,7 +187,7 @@ Test01 & inference-time zeroing & $7.8\%$ & $-76.0$ & descriptor causally necess
 Test02 & real descriptor & $83.0\%$ & ref. & matched positive condition & closed pos. \\
 Test02 & zero descriptor & $75.0\%$ & $-8.0$ & falls back to baseline band & closed pos. \\
 Test02 & random descriptor & $73.6\%$ & $-9.4$ & control without structured guidance & closed pos. \\
-Test02 & shuffled descriptor & $73.6\%$ & $-9.4$ & control without correct pairing & closed pos. \\
+Test02 & shuffled descriptor & $73.2\%$ & $-9.8$ & control without correct pairing & closed pos. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -201,7 +201,7 @@ Test02 & shuffled descriptor & $73.6\%$ & $-9.4$ & control without correct pairi
 \toprule
 \textbf{Arm} & \textbf{Cross-enc.\ CKA} & \textbf{Pre-proj.\ retention} & \textbf{Hard-neg.\ acc.} & \textbf{Reading} \\
 \midrule
-\texttt{D0} & $0.435$ & $0.597$ & $80.4\%$ & baseline geometry and fine discrimination \\
+\texttt{D0} & $0.435$ & $0.597$ & $94.6\%$ & baseline geometry and strong fine discrimination \\
 \texttt{d4a4} & $0.659$ & $0.770$ & $95.2\%$ & best retention and best retrieval \\
 \texttt{a4r} & $0.766$ & $0.712$ & $94.4\%$ & strongest single-descriptor alignment \\
 \texttt{d4-a4r} & $0.794$ & $0.748$ & $94.2\%$ & highest alignment, not highest retrieval \\
@@ -221,7 +221,7 @@ Test02 & shuffled descriptor & $73.6\%$ & $-9.4$ & control without correct pairi
 \texttt{a4r-ctrl} & none & $79.2\%$ & n/r & $0.0$ & closed baseline \\
 \texttt{a4r-pcm} & MIDI-side proj.\ cond. & $80.0\%$ & n/r & $+0.8$ & closed positive \\
 \texttt{a4r-pcd-zero} & audio-side, zero ctrl & $81.8\%$ & 30 & $+2.6$ & closed positive \\
-\texttt{a4r-pca} & audio-side proj.\ cond. & $82.6\%$ & 30 & $+3.4$ & closed positive \\
+\texttt{a4r-pca} & audio-side proj.\ cond. & $82.6\%$ & 25 & $+3.4$ & closed positive \\
 \texttt{a4r-pcd} & dual-cond.\ projection & $84.2\%$ & 25 & $+5.0$ & closed positive \\
 \bottomrule
 \end{tabularx}
@@ -257,7 +257,7 @@ The narrowness of that band is exactly what opened Gate 10. The relevant questio
 
 \begin{table}[ht]
 \centering
-\caption{Gate 10 mechanism sweep. Final results, 9/9 arms at 30 epochs.}
+\caption{Gate 10 mechanism sweep. Best structured results within 30-epoch runs.}
 \label{tab:gate10}
 \footnotesize
 \begin{tabularx}{\textwidth}{l l l c c X l}
@@ -269,25 +269,25 @@ The narrowness of that band is exactly what opened Gate 10. The relevant questio
 \texttt{a10d-concat} & \texttt{a10d} & concat & 30 & $75.4\%$ & third & closed \\
 \texttt{a10a-pca} & \texttt{a10a} & FiLM/\texttt{pca} & 30 & $74.0\%$ & fourth & closed \\
 \texttt{a10d-pca} & \texttt{a10d} & FiLM/\texttt{pca} & 30 & $73.2\%$ & fifth & closed \\
-\texttt{a7-pca} & \texttt{a7} & FiLM/\texttt{pca} & 30 & $71.8\%$ & sixth & closed \\
+\texttt{a7-pca} & \texttt{a7} & FiLM/\texttt{pca} & 29 & $71.6\%$ & sixth & closed \\
 \texttt{a10a-ab} & \texttt{a10a} & attn bias & 30 & $59.6\%$ & seventh & closed \\
-\texttt{a10d-ab} & \texttt{a10d} & attn bias & 30 & $57.2\%$ & eighth & closed \\
+\texttt{a10d-ab} & \texttt{a10d} & attn bias & 28 & $57.4\%$ & eighth & closed \\
 \texttt{a7-ab} & \texttt{a7} & attn bias & 30 & $55.8\%$ & ninth & closed \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Final ranking: \texttt{concat > FiLM/pca} (+2pp) \texttt{>> attn\_bias} (+16pp). Mechanism dominates over descriptor content (2--3pp spread within each mechanism class). All arms closed at comparable epochs.
+Final ranking: concat $>$ FiLM/\texttt{pca} (+3pp mean-to-mean) $\gg$ attention bias (roughly fifteen-plus points lower). Mechanism dominates over descriptor content (2--3pp spread within each mechanism class).
 
 
 \section{Escalon 2 - Full null and descriptor-by-mechanism inventory}
 
 
-The second front produced a real cross-modal baseline and a real descriptor program, but not a positive descriptor lift under the first completed mechanism family. The main chapter compresses that fact into a short open-front reading. This section restores the quantitative detail that supports that more austere conclusion.
+The second front produced a real cross-modal baseline and a real descriptor program, but not a positive descriptor lift under the first completed mechanism family. The main chapter compresses that fact into a short front-level reading. This section restores the quantitative detail that supports that closed null together with the completed first pass of \texttt{P3}, where the live question shifts from mechanism to encoder regime.
 
 \begin{table}[ht]
 \centering
-\caption{Escalon 2 phase summary. Phase-level reading of the front up to the opening of \texttt{S2-P3}.}
+\caption{Escalon 2 phase summary. Phase-level reading of the front through the first completed \texttt{P2} mechanism block, with \texttt{P3} reported separately below.}
 \label{tab:e2-phases}
 \footnotesize
 \begin{tabularx}{\textwidth}{l X c c X l}
@@ -304,7 +304,7 @@ The second front produced a real cross-modal baseline and a real descriptor prog
 \end{tabularx}
 \end{table}
 
-\texttt{S2-P3} is intentionally excluded from the tables below because the regime is already implemented and in execution, but does not yet have a stable comparative readout.
+\texttt{S2-P3} is not listed as another row of the same table because it changes encoder regime rather than simply adding one more mechanism inside \texttt{P2}. Its first pass is already complete, however: \texttt{P3-D0} $= 78.8\%$ @ ep15, \texttt{P3-A4-16k-pca} $= 78.2\%$ @ ep25, \texttt{P3-V4-lin-pca} $= 76.8\%$ @ ep28, and \texttt{P3-H-series-pca} $= 75.6\%$ @ ep25. The current reading is therefore not ``P3 still opening'' but ``first pass completed, no descriptor lift over \texttt{P3-D0}, next live question $=$ \texttt{P2} vs \texttt{P3} under the encoder-regime contrast.''
 
 \begin{table}[ht]
 \centering
@@ -428,15 +428,15 @@ An arm is the experimentally concrete level where descriptor, mechanism, and fro
 \texttt{a7r} & \texttt{A7} & rev.\ cross-att & G9 & natural-harmony reopening & retro. \\
 \texttt{a9r} & \texttt{A9} & rev.\ cross-att & G9 & second reopening & retro. \\
 \texttt{a10ar--er} & \texttt{A10a--e} & rev.\ cross-att & A10 & descriptor revision in music branch & retro. \\
-\texttt{a7}, \texttt{a10a}, \texttt{a10d} & various & concat & G10 & pilot mechanism sweep (concat) & retro./prov. \\
-\texttt{*-pca} & various & FiLM/\texttt{pca} & G10 & pilot mechanism sweep (FiLM) & retro./prov. \\
-\texttt{*-ab} & various & attn bias & G10 & pilot mechanism sweep (attn bias) & retro./prov. \\
+\texttt{a7}, \texttt{a10a}, \texttt{a10d} & various & concat & G10 & closed mechanism sweep (concat) & closed retro. \\
+\texttt{*-pca} & various & FiLM/\texttt{pca} & G10 & closed mechanism sweep (FiLM) & closed retro. \\
+\texttt{*-ab} & various & attn bias & G10 & closed mechanism sweep (attn bias) & closed retro. \\
 \texttt{V4-lin} & \texttt{V4-lin} & concat & E2 & oscillator-dynamics descriptor & impl. \\
 \texttt{H-series} & \texttt{H-series} & concat & E2 & harmonic-series descriptor & impl. \\
 \texttt{A4-16k} & \texttt{A4-16k} & concat & E2 & non-ratio control & impl. \\
 \texttt{*-attnbias}, \texttt{*-xattn} & E2 descs & attn bias / cross-att & E2 & mechanism comparison & impl. \\
 \texttt{*-pca} & E2 descs & FiLM/\texttt{pca} & E2 & late cond.\ contrast & impl. \\
-\texttt{P3-*} & E2 descs & foundation speech & E2-P3 & encoder-regime comparison (WavLM) & planned \\
+\texttt{P3-D0}, \texttt{P3-*-pca} & E2 families & baseline / FiLM / \texttt{pca} & E2-P3 & encoder-regime comparison (WavLM-Large) & impl. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -460,7 +460,7 @@ E1 canonical & MERT (${\sim}330$M) & MIDI Transf.\ (${\sim}13$M) & shared 256d &
 Gate 8 & E1 encoders & E1 encoders & cond.\ proj.\ head & VICReg + cond. & impl. \\
 G9/A10 & audio-only retro. & n/a & E1 protocol reuse & retrieval-oriented & retro. \\
 E2 initial & speech from scratch & EGG from scratch & shared heads & VICReg-style & impl. \\
-E2 P3 & WavLM-Large frozen & EGG encoder & shared proj. & cross-modal obj. & opening \\
+E2 P3 & WavLM-Large frozen & EGG encoder & shared proj.; none in P3-D0, FiLM/\texttt{pca} in guided arms & cross-modal obj.\ under stronger encoder & impl. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -527,12 +527,12 @@ DANN diagnostic & Adversarial bias-control closed without stable gain & Forced m
 Post-Gate 4.1 rectification & Descriptor program recenters around ratio-guided logic & Turned descriptor content into the core experimental axis & closed \\
 Ratio re-centering & Gates 4.2--4.5 define music-side descriptor winners & Prepared the scientific validation block & closed \\
 Gate 5B closure & Multi-seed, causal, geometric evidence consolidates E1 & Established strongest closed result of the program & closed \\
-Downstream extension & Gate 6 opens AMT as validation outside retrieval & Tested whether descriptor effects survive outside flagship task & active \\
+Downstream extension & Gate 6 closes AMT validation outside retrieval & Tested whether descriptor effects survive outside flagship task & closed negative \\
 Proj.-conditioning & Gate 8: \texttt{pcd > pca > pcd-zero > pcm > ctrl} & Descriptor signal survives deep in projection pipeline & closed \\
 Retrospective reopening & Gate 9 and A10 revisit natural harmony in music & Reopened strong-theory questions without displacing main evidence & retrospective \\
-Mechanism clarification & Gate 10 disentangles descriptor from injection route & Converts compressed retrospective band into causal question & active \\
-New sensor-physics front & E2: Speech$\leftrightarrow$EGG with strong baseline, first null & Extends program outside symbolic music pairing & active \\
-Encoder-regime comparison & S2-P3: WavLM-Large frozen on speech side & Shifts live question from mechanism to encoder regime & active \\
+Mechanism clarification & Gate 10 closes the mechanism contrast in the retrospective branch & Mechanism dominates over descriptor content; concat $>$ FiLM $\gg$ attn bias & closed \\
+New sensor-physics front & E2: Speech$\leftrightarrow$EGG with strong baseline, closed null & Extends program outside symbolic music pairing & closed null \\
+Encoder-regime comparison & S2-P3 completes first WavLM-Large frozen pass & Shifts live question from mechanism to encoder regime; next step = P2 vs P3 & active \\
 Synthetic-physical bridge & E3: Audio$\leftrightarrow$Lissajous & Creates first explicitly shared object with Beacon & horizon \\
 Cardiovascular expansion & E4: ECG$\leftrightarrow$PPG & Extends logic beyond acoustics into physiology & horizon \\
 \bottomrule
