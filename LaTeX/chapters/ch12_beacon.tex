@@ -11,7 +11,7 @@ If Chapter 11 asked what becomes visible when harmonic hypotheses are made compu
 
 That distinction matters from the start. The Beacon is not a metronome, because its point is not periodic marking. It is not a drone, because the field it produces is internally structured rather than spectrally flat. It is not a sound bath, because its organizing principle is not immersion alone but sustained harmonic proportion. A motor excites a string continuously, and the instrument holds open a dense pattern of interacting partials that would otherwise collapse as soon as the note decayed. What the listener encounters is not a single pitch extended in time but a living interference field.
 
-Operationally, the Beacon begins with a resonant source, an excitation method, a tuning procedure, and a room. In the earliest configuration the source is a guitar string coupled to a resonant body, and the excitation is a motor that keeps the system vibrating continuously instead of allowing a plucked event to die away. Later generations replace or complement that source with tuning forks, oscillator banks, and live networked outputs, but the logic remains the same. A harmonic field is sustained, tuned by coherence of the resulting interference pattern, and then probed through listening, biosignal capture, or visible pattern formation. The object of study is therefore not a recorded sound file. It is a physically maintained acoustic condition.
+Operationally, the Beacon begins with a resonant source, an excitation method, a tuning procedure, and a room. In the earliest configuration the source is a guitar string coupled to a resonant body, and the excitation is a motor that keeps the system vibrating continuously instead of allowing a plucked event to die away. Later generations replace or complement that source with tuning forks, piezoelectric actuators, oscillator banks, and live networked outputs, but the logic remains the same. A harmonic field is sustained, tuned by coherence of the resulting interference pattern, and then probed through listening, biosignal capture, or visible pattern formation. The object of study is therefore not a recorded sound file. It is a physically maintained acoustic condition.
 
 The reports surrounding that field are strikingly consistent. Listeners speak of melodies, choral textures, bagpipes, voices, and other organized sounds that are not explicitly present in the source. The useful term here is harmonic pareidolia. The point is to treat those perceptions as situated readings that emerge within a highly structured acoustic field rather than as a single fixed content that the source would simply contain in advance. The field is structured enough to sustain recognition and open enough to remain underdetermined.
 
@@ -59,7 +59,7 @@ That is why the Beacon matters for HIT. It provides a controllable source of nat
 \section{Principle of operation: the harmonic gravitational field}
 
 
-The Beacon is physically simple and experimentally demanding. A string under continuous excitation does not present only a fundamental. It presents the full harmonic series at once, with amplitudes and beat patterns shaped by the material properties of the string, the excitation point, the resonant body, and the room in which the instrument sounds. The motor's function is not decorative automation. It converts an event that would normally decay into a sustained field in which the interaction among partials can be held open long enough to become perceptible, measurable, and tunable.
+The Beacon is physically simple and experimentally demanding. A string under continuous excitation does not present only a fundamental. It presents the full harmonic series at once, with amplitudes and beat patterns shaped by the material properties of the string, the excitation point, the resonant body, and the room in which the instrument sounds. Classical acoustics has long treated that problem as one of coupled source, resonator, and field rather than isolated pitch production \parencite{rayleigh_1877, benade_1973, fletcher_1996}. The motor's function is not decorative automation. It converts an event that would normally decay into a sustained field in which the interaction among partials can be held open long enough to become perceptible, measurable, and tunable.
 
 At the most compressed level, the harmonic logic can be written as:
 
@@ -89,18 +89,6 @@ The metaphor of a harmonic gravitational field should be read in that concrete s
 
 That construction connects directly to earlier chapters. Chapter 4 described consonance as functional relation rather than isolated property. Chapter 8 described harmonic organization as a problem of efficient coordination under constraint. The Beacon translates those claims into a physical setup. It produces a field in which the difference between stable and unstable proportion is not only thinkable but experientially accessible.
 
-\begin{figure}[ht]
-\centering
-\fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}
-\textit{Cymatic visualization of the Beacon field at three tuning points.}\\[4pt]
-\textbf{Left}: slightly detuned (irregular, unstable nodal pattern).\\
-\textbf{Center}: properly tuned (coherent, symmetric nodal geometry).\\
-\textbf{Right}: sharply detuned (chaotic surface response).\\[4pt]
-\textit{[Photograph or high-resolution cymatic capture to be inserted.]}
-\vspace{2cm}}}
-\caption{Cymatic visualization at three tuning points. The transition from disorder to coherence as tuning approaches harmonic precision illustrates the basin-of-attraction structure described in the text.}
-\label{fig:beacon_cymatic}
-\end{figure}
 
 The room is part of the experiment. The Beacon field interacts with surfaces, volume, air column, and placement. Each room produces a situated version of the field. That is not a flaw to be hidden but a feature to be handled. The Beacon is not a transparent playback device whose environment should be treated as negligible. It is a probe in which source and space co-produce the acoustic condition under study.
 
@@ -110,11 +98,13 @@ The room is part of the experiment. The Beacon field interacts with surfaces, vo
 
 The Beacon did not appear as a finished object. It evolved through successive generations, each of which solved one operational problem and exposed another. That history matters because it shows that the device is not an aesthetic artifact but a chain of engineering responses to experimental constraints: how to sustain the field, how to tune it repeatably, how to transport it, how to connect it to sensors, and how to separate what belongs to harmonic organization from what belongs to the material support that produces it.
 
-The first generation was the Beacon Guitar. Its problem was also its strength: how to obtain a dense, continuous, physically resonant harmonic field rather than a short acoustic event. The solution was a motor-driven string coupled to a resonant body and tuned manually until the interference pattern stabilized. This version established the phenomenon and made the field effect undeniable. It also had the highest spectral richness of the line. But it demanded daily precision, constant retuning, manual skill, and a favorable room. In other words, the generation that produced the strongest field was also the least portable and the least forgiving.
+The first generation was the Beacon Guitar. Its problem was also its strength: how to obtain a dense, continuous, physically resonant harmonic field rather than a short acoustic event. The solution was a motor-driven string coupled to a resonant body and tuned manually until the interference pattern stabilized. A key step in that tuning procedure was measuring the spectral profile of the instrument itself---the characteristic timbre of the resonant body---and then tuning the strings to natural-ratio intervals derived from their relation to that spectral signature rather than to an external equal-tempered standard. This version established the phenomenon and made the field effect undeniable. It also had the highest spectral richness of the line. But it demanded daily precision, constant retuning, manual skill, and a favorable room. In other words, the generation that produced the strongest field was also the least portable and the least forgiving.
 
 The second generation, the Pico Robot, answered that fragility by moving toward struck tuning forks and related resonant elements. The question here was no longer only how rich the field could be, but how repeatably it could be produced without the tuning burden of the guitar configuration. The gain was robustness, portability, and easier deployment. The cost was a narrower harmonic palette and a different phenomenological character. What was gained in stability was paid for in spectral density and in the open, flowing character of the original string-based field.
 
-The third generation moved toward digital control. Here the problem was no longer local fragility but limited programmability and limited coupling to external systems. The response was a bank of harmonically organized oscillators controlled through OSC, including a grid of 64 harmonic pads and routable synthesis targets. This version made exact recall, remote control, and sensor coupling much easier. It also opened a path toward harmonic feedback systems in which other data streams can modulate the field in real time. But the move reopened a different methodological question: how much of the Beacon's distinctive effect belongs to harmonic organization as such, and how much belongs to the material behavior of a physically resonant source such as a string, fork, or resonant cavity?
+A particularly productive line of exploration across the second and third generations has been the systematic study of the relationships among the first five natural harmonics ($1\!:\!2\!:\!3\!:\!4\!:\!5$). These ratios define the densest region of simple-integer relations and have repeatedly yielded some of the clearest interference structures in our practical work. Within the range explored so far, the same region has also tended to generate the most stable and geometrically distinct Lissajous figures, which is why it has become a natural meeting point between the Beacon's acoustic work and the visible-pattern exploration described below.
+
+The third generation moved toward digital control. Here the problem was no longer local fragility but limited programmability and limited coupling to external systems. The response took two complementary forms. On one side, a bank of harmonically organized oscillators controlled through OSC, including a grid of 64 harmonic pads and routable synthesis targets. On the other, the same 64-pad control surface driving piezoelectric actuators that excite metal reeds at independently controllable frequencies, connected wirelessly via Bluetooth. The first form is purely digital; the second recovers the physical resonance of earlier generations while gaining the programmability and repeatability of digital control. Both forms made exact recall, remote control, and sensor coupling much easier. They also opened a path toward harmonic feedback systems in which other data streams can modulate the field in real time. But the move reopened a different methodological question: how much of the Beacon's distinctive effect belongs to harmonic organization as such, and how much belongs to the material behavior of a physically resonant source such as a string, fork, or resonant cavity?
 
 The fourth generation, still emergent, extends the Beacon toward distributed and networked operation. In this regime the point is not only to build one device that sounds in one room, but to make a live Beacon available through app-based access, remote listening, and later networks of synchronized devices. The explicit design choice is important: the app is not conceived as playback of a canned recording, but as access to a Beacon that is sounding in real time somewhere in the network. At that point the Beacon stops being only a local laboratory instrument and starts becoming a platform. Methodologically, this changes what can be transported, what can be personalized, and what kind of collective or environmental evidence the system can eventually seek.
 
@@ -129,11 +119,46 @@ Generation & Physical source & Problem solved & Portability & Spectral richness 
 \midrule
 Beacon Guitar & String + resonant body, continuous motor & Produces dense sustained field & Low & Highest \\
 Pico Robot & Tuning forks + compact resonators & Improves robustness and portability & High & Medium \\
-Digital/OSC & Oscillator bank + harmonic control surface & Enables repeatability and sensor coupling & Very high & Controllable \\
+Digital/OSC & Oscillator bank / piezoelectric actuators + 64-pad harmonic control surface & Enables repeatability and sensor coupling & Very high & Controllable \\
 App/Distributed & Live remote Beacon node, streaming & Extends device into platform & Universal & Configurable \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5.5cm, keepaspectratio]{Beacon1.png}
+    \caption{Beacon Guitar (1st gen). Motor-driven string coupled to acoustic body.}
+    \label{fig:beacon1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5.5cm, keepaspectratio]{Beacon2.jpg}
+    \caption{Pico Robot (2nd gen). Mechanical arms strike tuning forks on a guitar body.}
+    \label{fig:beacon2}
+\end{subfigure}
+
+\vspace{0.5cm}
+
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5.5cm, keepaspectratio]{Beacon3-entero.jpg}
+    \caption{Beacon 3 (3rd gen). Piezoelectric motors drive metal reeds, controlled wirelessly via Bluetooth from a 64-pad harmonic surface.}
+    \label{fig:beacon3}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5.5cm, keepaspectratio]{Beacon4-web-app.png}
+    \caption{Harmonic Beacon app (4th gen). Live streaming interface for distributed access.}
+    \label{fig:beacon4}
+\end{subfigure}
+\caption{Four generations of the Harmonic Beacon. The evolution moves from a fragile but spectrally rich laboratory instrument~(a) through increasingly robust and programmable configurations~(b,~c) toward a distributed platform accessible from any device~(d). Each generation solves one operational problem and exposes the next.}
+\label{fig:beacon_generations}
+\end{figure}
 
 
 \section{Four experimental lines}
@@ -145,11 +170,20 @@ The first line concerns biosignal reading and personalized calibration. Its expe
 
 The second line measures physiological response under controlled exposure. Here the question is narrower and less speculative. Does exposure to a sustained harmonic field produce measurable changes in autonomic or cortical parameters relative to a baseline or matched control? Heart rate variability, respiration, EEG, and related signals belong to this line. The criterion is not whether the subject reports that the field was pleasant. Subjective report matters, but by itself it cannot discriminate harmonic organization from novelty, relaxation, expectation, or context. The line therefore aims toward pre/post designs and contrastive conditions in which the harmonic structure of the field, rather than sound in general, is what is being tested.
 
-The third line is the furthest from closure and the clearest case of a direction rather than a result: EEG-to-harmonics feedback. The idea is to transform the Beacon from a source of exposure into an interactive system in which measured neural dynamics modulate the harmonic field in real time. Concretely, this means routing sensor streams into OSC-compatible control space and letting those streams drive a harmonic synthesis layer or a digitally controlled Beacon configuration. That move would turn the measured system and the perturbed system into the same loop. The point is not to claim an achieved neurofeedback protocol. It is to mark the conceptual horizon of the Beacon program: harmonic organization is not only something to which a subject might respond, but also a candidate variable through which feedback itself might be structured.
+The third line concerns EEG-to-harmonics feedback: transforming the Beacon from a source of exposure into an interactive system in which measured neural dynamics modulate the harmonic field in real time. Because the electroencephalography hardware used in this line exports its readings via OSC, the same protocol already used for harmonic control, the technical path is direct: an application receives the EEG stream, translates its spectral content into frequency parameters, and routes those parameters to the Beacon's harmonic surface, so that the instrument responds in real time to the listener's own brain activity. A prototype of this application is currently under development.
 
-The fourth line studies harmonic organization made visible. The Beacon's experimental work led independently to Lissajous figures as objects in which ratio becomes simultaneously audible, visible, and physically generable. This line uses a physical apparatus of controlled excitation, resonance tubes or vibrating membranes, mirrors, laser projection, and image capture to produce analog figures under repeatable conditions. The point is to document how specific harmonic relations generate visible topologies in a pipeline where the source, the resonator, and the capture device are all part of the experiment. It matters because it pushes the Beacon beyond exposure studies and into the deliberate documentation of harmonic structure in visible form.
+What this makes possible is an experimentally legible feedback loop. Brain activity produces an electrical pattern; that pattern is read and translated into frequencies; those frequencies drive the Beacon; the Beacon's acoustic field reaches the body; and the resulting physiological response may in turn alter the next EEG pattern. The subject therefore receives continuous sensory feedback on a neural state that would otherwise remain imperceptible. The experimental question is whether that loop can support voluntary, intentional modulation---whether a person can learn to steer internal states by attending to the harmonic field that those states are themselves generating. If so, the Beacon would function as a brain--field interface: not a passive exposure device but an active channel through which cortical dynamics and acoustic organization constrain one another in real time. This line is the least mature of the four, but it marks the conceptual horizon of the Beacon program: harmonic organization is not only something to which a subject might respond, but also a candidate variable through which feedback itself might be structured.
 
-That exploration is being systematized through OpenClaw, the open-source agent framework used here for multi-agent orchestration and workflow decomposition.\footnote{Public repository: \url{https://github.com/openclaw/openclaw}. Multi-agent documentation: \url{https://docs.openclaw.ai/concepts/multi-agent}.} Within this line, OpenClaw coordinates experimental design, apparatus control, capture logic, and dataset construction as linked tasks rather than as isolated manual steps. The practical effect is that the exploration of harmonic parameter space, capture conditions, and figure families can proceed as a structured research pipeline instead of a loose sequence of ad hoc interventions.
+The fourth line studies harmonic organization made visible. The Beacon's experimental work led independently to Lissajous figures as objects in which ratio becomes simultaneously audible, visible, and physically generable. This line uses a physical apparatus of controlled excitation, resonance tubes or vibrating membranes, mirrors, laser projection, and image capture to produce analog figures under repeatable conditions. In that respect it belongs to a longer experimental archive running from Chladni's vibrating plates to Jenny's cymatic investigations, where patterned excitation leaves stable traces in visible matter and geometry \parencite{chladni_1787, jenny_1967}. The point is to document how specific harmonic relations generate visible topologies in a pipeline where the source, the resonator, and the capture device are all part of the experiment. It matters because it pushes the Beacon beyond exposure studies and into the deliberate documentation of harmonic structure in visible form.
+
+That exploration is being systematized through OpenClaw, the open-source agent framework used here for multi-agent orchestration and workflow decomposition.\footnote{Public repository: \url{https://github.com/openclaw/openclaw}. Multi-agent documentation: \url{https://docs.openclaw.ai/concepts/multi-agent}.} Within this line, OpenClaw coordinates experimental design, apparatus control, capture logic, and dataset construction as linked tasks rather than as isolated manual steps. Concretely, the OpenClaw agent is connected to the physical apparatus: it drives the excitation hardware, controls the mirror and laser projection geometry, and triggers a camera that photographs the resulting figure. The agent therefore does not merely plan experiments and organize data. It executes them: it selects a harmonic configuration, produces the corresponding physical figure, captures it, and registers the result as part of a growing dataset of ratio--topology correspondences. The practical effect is that the exploration of harmonic parameter space, capture conditions, and figure families can proceed as a structured research pipeline instead of a loose sequence of ad hoc interventions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.58\textwidth, angle=90]{Openclaw-lissajous-exploration.jpg}
+\caption{Sample matrix of Lissajous figures captured by the OpenClaw agent during autonomous exploration of harmonic parameter space. Each cell corresponds to a distinct frequency ratio produced by the physical apparatus and photographed by the capture system. The variety of topologies visible across the matrix illustrates how small changes in harmonic relation generate qualitatively distinct visible geometries.}
+\label{fig:openclaw_lissajous}
+\end{figure}
 
 The dataset itself proceeds in two phases. In the first, synthetic sounds with known harmonic parameters generate analog figures through the physical apparatus. In the second, the sound source also becomes analog, yielding a fully physical pipeline from source to visible pattern. This line converges directly with Escalon 3 of Phideus. The computational branch reaches Lissajous figures because they provide deterministic control and exact parametric ground truth. The Beacon branch reaches them because sustained harmonic fields naturally produce visible ratio structure under physical resonance. The convergence is methodologically powerful precisely because the two probes arrive there for different reasons.
 
