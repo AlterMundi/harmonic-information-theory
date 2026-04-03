@@ -15,7 +15,7 @@ The concept that makes this inquiry specific is the descriptor. In Phideus, a de
 
 Operationally, Phideus begins with a paired dataset. Each example contains two modalities or domains that refer to the same event and are aligned at the relevant unit of analysis. In a first phase, those paired domains are piano audio and piano MIDI. In a second phase, they are speech and electroglottography. In a third phase, the target pair is stereo audio and Lissajous figures generated from the same parametric scene. In a fourth phase, the target pair is electrocardiography and photoplethysmography recorded from the same cardiac event. In every case, the dataset is organized into matched segments or windows so that the model sees two different inscriptions of the same temporal event rather than two unrelated signals. That pairing is the experimental base condition. 
 
-From that paired data, Phideus builds a dual neural architecture. There is one encoder for each modality, because each signal has to be transduced into its own latent representation before comparison becomes possible. On top of those encoders sit projection heads that map both sides into a shared embedding space. The encoders vary by front: sometimes they are smaller Transformer or CNN-Transformer models trained from scratch for traceability; sometimes a later comparison regime introduces a stronger frozen backbone such as MERT or WavLM on one side of the pair. But the basic architecture remains a paired encoder system followed by learned projections into a common space.
+From that paired data, Phideus builds a dual neural architecture. There is one encoder for each modality, because each signal has to be transduced into its own latent representation before comparison becomes possible. On top of those encoders sit projection heads that map both sides into a shared embedding space. The encoders vary by front: sometimes they are smaller Transformer or CNN-Transformer models trained from scratch for traceability; sometimes the audio side uses a local MERT-inspired encoder for the same reason; and sometimes a later comparison regime introduces a stronger frozen backbone such as MERT-330M or WavLM on one side of the pair. But the basic architecture remains a paired encoder system followed by learned projections into a common space.
 
 The descriptor enters after that setup is in place. For each side of the pair, the program computes a compact numerical summary of some hypothesized relational structure directly from the raw data or from a lightly transformed version of it. That descriptor is then injected into the network through a chosen route, such as concatenation, cross-attention, attention bias, reverse cross-attention, or projection conditioning. The point is not simply to add more input. The point is to alter what kind of relation the model is allowed to privilege while learning correspondence between both domains. Only after that descriptor injection does the model produce the embeddings that are compared in the shared space.
 
@@ -41,7 +41,7 @@ What would count as evidence under such a program? Retrieval alone is not enough
 
 The program was not designed as a single decisive experiment. It was staged. Here escalon names one experimental front or staged level of the same general program. Each escalon asks a harder version of the same question, and each one preserves enough comparability with the others that a result in one domain can discipline what may later be claimed in the next. The sequence moves from a domain with clean pairing and rich prior tooling toward domains where the shared event is harder to capture, the transduction changes more radically, or the ground truth becomes newly generable.
 
-Escalon 1 begins in music, with paired piano audio and piano MIDI from MAESTRO v3.0.0. This is the most hospitable opening because the musical event is held constant while the inscription changes. Audio records the acoustic result. MIDI records the performed gesture as symbolic event structure. The audio side is encoded with MERT, a pretrained music model with roughly 330 million parameters; the MIDI side uses a smaller Transformer trained from scratch; both project into a shared 256-dimensional space under VICReg \parencite{li_2024,bardes_2022}. The question is clean: when two inscriptions of the same event are already aligned at the dataset level, does descriptor guidance produce a stronger and more structured shared space than an unguided baseline?
+Escalon 1 begins in music, with paired piano audio and piano MIDI from MAESTRO v3.0.0. This is the most hospitable opening because the musical event is held constant while the inscription changes. Audio records the acoustic result. MIDI records the performed gesture as symbolic event structure. The audio side is encoded with a local MERT-inspired encoder (\texttt{MERTEncoderLite}, roughly 60 million parameters) rather than with the full 330M HuggingFace backbone; the MIDI side uses a smaller Transformer trained from scratch; both project into a shared 256-dimensional space under VICReg \parencite{li_2024,bardes_2022}. The question is clean: when two inscriptions of the same event are already aligned at the dataset level, does descriptor guidance produce a stronger and more structured shared space than an unguided baseline?
 
 Escalon 2 keeps the cross-modal logic but removes the symbolic convenience. Here the pair is speech and electroglottography. A microphone captures the airborne pressure wave; an electroglottograph records impedance variation at the level of glottal contact. The two signals come from the same vocal event but from materially different physical interfaces. The dataset is French Lombard v1.1, with 38 speakers and 9,120 clips segmented into two-second windows with half-second overlap. The architectural logic remains dual-encoder and shared-space, but the regime is deliberately more traceable than Escalon 1: the first pass does not hide behind a foundation speech encoder, because the point of the initial front is to see whether descriptor signal becomes legible under a simple, auditable setup before stronger backbones are introduced.
 
@@ -64,7 +64,7 @@ Front & Modality A & Modality B & Dataset & Status \\
 \midrule
 Escalon~1 & Piano audio & Piano MIDI & MAESTRO v3.0.0 & Closed \\
 Escalon~2 & Speech & EGG & French Lombard v1.1 & Closed (null) \\
-Escalon~3 & Audio XY & Lissajous figure & Synthetic + Analog & In progress \\
+Escalon~3 & Audio XY & Lissajous figure & Synthetic + Analog & Closed through P6 \\
 Escalon~4 & ECG & PPG & BIDMC / MIMIC & Planned \\
 \bottomrule
 \end{tabularx}
@@ -79,7 +79,7 @@ Escalon~4 & ECG & PPG & BIDMC / MIMIC & Planned \\
     >=stealth
 ]
 % Audio side
-\node[box, fill=blue!10] (ea) at (-3, 0) {Audio\\Encoder\\(MERT, 330M)};
+\node[box, fill=blue!10] (ea) at (-3, 0) {Audio\\Encoder\\(MERTLite, ${\sim}60$M)};
 \node[smallbox, fill=orange!15] (da) at (-3, -1.8) {Descriptor\\$d_a$};
 \node[box, fill=blue!20] (pa) at (-3, -3.2) {Projection\\$P_a$};
 \node[smallbox, fill=green!15] (za) at (-3, -4.8) {$z_a \in \mathbb{R}^{256}$};
@@ -200,9 +200,11 @@ $$
 
 This is the cleanest place in the program to see why descriptor and mechanism must not be collapsed. The same descriptor can behave very differently depending on whether it is concatenated, used as attention context, used as an attention query, or allowed to modulate the projection head late in the pipeline \parencite{vaswani_2017,perez_2018}.
 
-The cleanest lesson of Escalon 1 is that route matters. Attention-based injection systematically outperforms simple concatenation, which means descriptor signal is not best understood as static side information pasted onto an embedding. It becomes productive when it is allowed to reorganize interaction among tokens. Projection conditioning adds a second lesson. Descriptor information can survive even when the intervention occurs at the end of the pipeline rather than at its beginning. The signal is therefore not tied to one privileged insertion point. It can work by reshaping token interaction early or by modulating the final projection late.
+The cleanest lesson of Escalon 1 is that route matters, but not in the simple sense that attention-based injection universally dominates concatenation. The canonical dual concat arm \texttt{d4a4} remains the strongest closed retrieval reference of the front, and the later retrospective mechanism sweep showed concat $>$ FiLM/\texttt{pca} $\gg$ attention bias within that branch. What the program has established more carefully is that descriptor signal can become highly productive when it is allowed to reorganize interaction rather than appear only as static side information pasted onto an embedding.
 
-This distinction also stabilizes the reading of the chapter's own evidence. D4 and A4 answer the question of content. Concat, cross-attention, attention bias, reverse cross-attention, and projection conditioning answer the question of route. Arms such as d4a4, a4r, or d4-a4r belong to the level where both variables meet. Figure 11.2 schematizes the three most legible routes, while Appendix C and the methodological paper will carry the full implementation-level inventory. The later sections can then read results without collapsing these layers into one another.
+That point is especially important for reverse cross-attention. Its interest is not that it always wins on raw score. It is that it can remain competitively strong while compressing long encoder sequences through a much shorter descriptor-guided interface, reducing processing cost and interaction burden. Projection conditioning adds a complementary lesson. Descriptor information can also survive when the intervention occurs at the end of the pipeline rather than at its beginning. The signal is therefore not tied to one privileged insertion point. It can work by reshaping token interaction early, by compressing interaction efficiently through descriptor queries, or by modulating the final projection late.
+
+This distinction also stabilizes the reading of the chapter's own evidence. D4 and A4 answer the question of content. Concat, cross-attention, attention bias, reverse cross-attention, and projection conditioning answer the question of route. Arms such as d4a4, a4r, or d4-a4r belong to the level where both variables meet. Figure 11.2 schematizes the three most legible routes, while Appendix~C and the methodological paper will carry the full implementation-level inventory. The later sections can then read results without collapsing these layers into one another.
 
 \begin{figure}[ht]
 \centering
@@ -254,7 +256,7 @@ The strongest closed result of Phideus remains the descriptor-guided validation 
 
 That retrieval advantage is supported by three causal lines of evidence. The first is inference-time ablation. When the A4 signal is zeroed at evaluation while keeping the trained weights fixed, performance collapses from 83.8 percent to 7.8 percent. The descriptor is not acting as decorative side information. The model depends on it. The second is parameter-matched degradation. Random, zeroed, or temporally shuffled substitutes fall back to the unguided band, preserving an 8.0-to-9.8-percentage-point causal gap between the real descriptor and its degraded controls. The advantage therefore comes from structured information rather than from added capacity alone. The third is pre-registration. Prediction matrices and admissible inference rules were written before the main readout, constraining interpretation before the relevant numbers were seen. That control does not make post-hoc reasoning impossible, but it sharply limits the most common forms of confirmation drift \parencite{pearl_2009}.
 
-The evidence does not stop at retrieval. Cross-encoder alignment, measured by CKA, rises by roughly 82 percent in the guided condition, from 0.435 in D0 to as high as 0.794 in the best aligned arm \parencite{kornblith_2019}. At the same time, the descriptor-guided arms preserve roughly 29 percent more cross-modal information before the projection bottleneck. The descriptor is therefore not merely helping the model rank partners more effectively. It is altering the geometry through which both encoders are brought into relation.
+The evidence does not stop at retrieval. Cross-encoder alignment, measured by CKA, improves across the guided arms, but not all in the same way. The largest gain appears in the best aligned arm, \texttt{d4-a4r}, which rises from 0.435 in D0 to 0.794, roughly an 82 percent increase \parencite{kornblith_2019}. The flagship dual arm \texttt{d4a4} rises to 0.659, roughly 51 percent above D0, while also delivering the best retrieval and the strongest pre-projection retention. At the same time, the descriptor-guided arms preserve roughly 29 percent more cross-modal information before the projection bottleneck. The descriptor is therefore not merely helping the model rank partners more effectively. It is altering the geometry through which both encoders are brought into relation.
 
 Mechanistic evidence strengthens the same reading. Under projection conditioning, the best arm reaches 84.2 percent, the program's highest single-seed retrieval score. Even when only one side is conditioned late in the pipeline, the guided arm remains above the unguided control. Descriptor signal survives injection at the level of the projection head itself. This matters because it shows that the effect is not tied only to early token interaction. Guidance can remain operative all the way down to the final mapping into shared space.
 
@@ -269,10 +271,10 @@ The front also closes strongly at the level of discrimination difficulty. Hard-n
 \toprule
 Dimension & Test & Result & Interpretation \\
 \midrule
-Retrieval & Eval-seed reference & $84.1\% \pm 2.3$pp (\texttt{d4a4}) & Strong guided reference; full training-seed replication pending \\
+Retrieval & Evaluation-seed reference & $84.1\% \pm 2.3$pp (\texttt{d4a4}) & Strong guided reference; full training-seed replication pending \\
 Causal (ablation) & Inference-time zeroing & $83.8\% \to 7.8\%$ & Descriptor causally necessary \\
 Causal (controls) & Parameter-matched degradation & $+8.0$ to $+9.8$pp gap & Information, not parameters \\
-Geometric & CKA alignment & $+82\%$ & Representational reorganization \\
+Geometric & CKA alignment & $+82\%$ (best arm) & Representational reorganization \\
 Information & Pre-projection retention & $+29\%$ & More cross-modal info preserved \\
 Mechanistic & Projection conditioning & $84.2\%$ (record) & Signal survives deep in pipeline \\
 Fine-grained & Hard negatives & $> 94\%$ across canonical arms & Strong temporal identity resolution across the front \\
@@ -282,7 +284,7 @@ Fine-grained & Hard negatives & $> 94\%$ across canonical arms & Strong temporal
 
 \begin{table}[ht]
 \centering
-\caption{Canonical cross-modal retrieval reference across the main Escalon~1 arms ($n = 5$ per row; \texttt{d4a4} uses evaluation seeds over a fixed checkpoint).}
+\caption{Canonical cross-modal retrieval reference across the main Escalon~1 arms ($n = 5$ per row; \texttt{d4a4} uses evaluation-seed reads over a fixed checkpoint).}
 \label{tab:escalon1_multiseed}
 \footnotesize
 \begin{tabular}{@{}lcccccc@{}}
@@ -305,7 +307,7 @@ Escalon 2 poses a harder question than Escalon 1 because the modalities are no l
 
 That is why the unguided baseline matters so much. Under grouped bootstrap by speaker, D0 reaches 77.8 percent. On its own, that number already establishes something important: speech and electroglottographic traces share enough organization for a neural model to retrieve one from the other at a high level over structured candidate pools. Cross-modal structure in Phideus is therefore not confined to music, symbolic pairing, or aligned score metadata.
 
-The first descriptor-guided pass over the vocal front was not framed as a failure hunt but as a mechanistic clarification. Twelve conditions were tested across descriptor families and routes of injection. None produced a defendable lift over D0 under the declared interpretive rules. That closes one easy reading and does something more valuable than a premature positive would have done: it shows that the front cannot be carried by weak wins under the current encoder regime. The existence claim is already secure at the level of the baseline. The open question is now more precise. Under what representational conditions does descriptor signal become legible in this harder domain?
+The first descriptor-guided pass over the vocal front was not framed as a failure hunt but as a mechanistic clarification. Twelve conditions were tested across descriptor families and routes of injection. None produced a defendable lift over D0 under the declared interpretive rules. That result now has a clearer status than it did in earlier drafts: it is a closed initial mechanistic null, not an unresolved frontier waiting for one more weak positive. The existence claim is already secure at the level of the baseline. The live question shifts elsewhere: not whether \texttt{P2} can still be rescued by re-reading noise as lift, but how the front changes when the encoder regime itself changes, and how \texttt{P2} and \texttt{P3} should be read against one another.
 
 
 \section{The discovery: representation organizes geometry}
@@ -327,7 +329,7 @@ Phideus is not merely observational. It is constructive. The program does not on
 
 The constructive posture also imposes its own rigor. A descriptor may improve a model for reasons that do not validate the larger theory. It may regularize training, stabilize a bottleneck, or provide auxiliary structure without proving anything strong about harmony as such. The inverse can also happen: a theoretically important descriptor can fail because it was injected poorly, measured crudely, or tested under the wrong architectural comparison. Engineering utility and theoretical confirmation therefore cannot be treated as synonyms. Keeping them separate is not a weakness of the program. It is one of the conditions that makes the computational branch scientifically usable.
 
-The next fronts extend that constructive logic without exhausting it. Escalon~3 will bring ratio into a domain where it is exactly specifiable, visible, and audible at once, creating the first experimental convergence with Beacon around Lissajous objects. Escalon~4 will ask whether the same general question can survive outside acoustics in cardiovascular physiology. Phideus can make harmonic hypotheses operational, but it cannot close the entire phenomenon from inside computation alone. The next chapter takes up the complementary task: what becomes visible when the same problem is probed through sustained acoustic fields, embodied response, and acoustic-physiological experience.
+The next fronts have not all remained equally future-tense. Escalon~3 has already carried ratio into a domain where it is exactly specifiable, visible, and audible at once, creating the first experimental convergence with Beacon around Lissajous objects. Escalon~4 remains the future extension outside acoustics into cardiovascular physiology. Phideus can make harmonic hypotheses operational, but it cannot close the entire phenomenon from inside computation alone.
 
 
 \section{Experimental implications of the activation conjecture}
