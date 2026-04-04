@@ -17,6 +17,9 @@
 \usepackage{courier}                % Courier for monospace
 \usepackage{microtype}              % Microtypographic refinements
 \linespread{1.05}                   % Palatino benefits from slightly more leading
+\emergencystretch=2em               % Reduce avoidable box overflow in long prose/table cells
+\hfuzz=20pt                         % Ignore visually negligible overfull boxes
+\hbadness=10000                     % Ignore non-substantive underfull box warnings
 
 % --- Page geometry ---
 \usepackage[
@@ -181,6 +184,7 @@
 \begin{document}
 
 \frontmatter
+\hypersetup{pageanchor=false}
 
 % --- Title page ---
 \begin{titlepage}
@@ -233,6 +237,7 @@ Santiago Cetr\'an \quad Sof\'ia Campagnoli\par}
 
 % --- Table of contents ---
 \clearpage
+\hypersetup{pageanchor=true}
 \begingroup
 \hypersetup{linkcolor=black}
 \tableofcontents
