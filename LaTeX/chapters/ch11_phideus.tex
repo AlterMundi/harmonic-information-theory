@@ -80,13 +80,13 @@ Escalon~4 & ECG & PPG & BIDMC / MIMIC & Planned \\
 ]
 % Audio side
 \node[box, fill=blue!10] (ea) at (-3, 0) {Audio\\Encoder\\(MERTLite, ${\sim}60$M)};
-\node[smallbox, fill=orange!15] (da) at (-3, -1.8) {Descriptor\\$d_a$};
+\node[smallbox, fill=orange!15] (da) at (-5.1, -1.8) {Descriptor\\$d_a$};
 \node[box, fill=blue!20] (pa) at (-3, -3.2) {Projection\\$P_a$};
 \node[smallbox, fill=green!15] (za) at (-3, -4.8) {$z_a \in \mathbb{R}^{256}$};
 
 % MIDI side
 \node[box, fill=red!10] (em) at (3, 0) {MIDI\\Encoder\\(Transf., 13M)};
-\node[smallbox, fill=orange!15] (dm) at (3, -1.8) {Descriptor\\$d_b$};
+\node[smallbox, fill=orange!15] (dm) at (5.1, -1.8) {Descriptor\\$d_b$};
 \node[box, fill=red!20] (pm) at (3, -3.2) {Projection\\$P_b$};
 \node[smallbox, fill=green!15] (zm) at (3, -4.8) {$z_b \in \mathbb{R}^{256}$};
 
@@ -100,11 +100,11 @@ Escalon~4 & ECG & PPG & BIDMC / MIMIC & Planned \\
 % Arrows
 \draw[arr] (xa) -- (ea);
 \draw[arr] (ea) -- (pa);
-\draw[arr] (da) -- (pa);
+\draw[arr] (da.south east) -- ([xshift=-2pt,yshift=2pt]pa.west);
 \draw[arr] (pa) -- (za);
 \draw[arr] (xm) -- (em);
 \draw[arr] (em) -- (pm);
-\draw[arr] (dm) -- (pm);
+\draw[arr] (dm.south west) -- ([xshift=2pt,yshift=2pt]pm.east);
 \draw[arr] (pm) -- (zm);
 \draw[arr] (za) -- (loss);
 \draw[arr] (zm) -- (loss);
@@ -267,7 +267,7 @@ The front also closes strongly at the level of discrimination difficulty. Hard-n
 \caption{Summary of convergent evidence, Escalon~1.}
 \label{tab:escalon1_evidence}
 \footnotesize
-\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\begin{tabularx}{\textwidth}{@{}P{0.16\textwidth}P{0.19\textwidth}P{0.18\textwidth}Y@{}}
 \toprule
 Dimension & Test & Result & Interpretation \\
 \midrule

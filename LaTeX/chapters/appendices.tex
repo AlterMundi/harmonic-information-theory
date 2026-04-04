@@ -10,7 +10,7 @@ This glossary fixes the meaning of the manuscript's main terms as they are used 
 
 Before the alphabetical entries, Table~\ref{tab:hypotheses-glossary} gathers the program's six canonical hypotheses in the compact form used throughout the manuscript. The table is not a substitute for the argument developed in Chapter 5. It is a navigation aid: a reader can recover, at a glance, what each hypothesis claims, where it is primarily developed, and what kind of evidential status it currently carries in the present cut of the manuscript.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Canonical HIT hypotheses (\texttt{H1--H6}).}
 \label{tab:hypotheses-glossary}
@@ -166,12 +166,12 @@ Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denot
 
 The body of Chapter 11 uses Escalon 1 as the strongest demonstration that descriptor-guided cross-modal learning is real, causal, and geometrically non-trivial. The tables below gather the quantitative core of that claim in compact form.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Escalon 1 flagship retrieval summary. Canonical reference comparison for the main arms used in Chapter~11.}
 \label{tab:e1-flagship}
-\footnotesize
-\begin{tabularx}{\textwidth}{l l c c X l}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}P{0.11\textwidth}P{0.19\textwidth}c c Y P{0.14\textwidth}@{}}
 \toprule
 \textbf{Arm} & \textbf{Descriptor route} & \textbf{\texttt{S} (canonical ref.)} & \textbf{$\Delta$ vs \texttt{D0}} & \textbf{Reading} & \textbf{Status} \\
 \midrule
@@ -183,7 +183,7 @@ The body of Chapter 11 uses Escalon 1 as the strongest demonstration that descri
 \end{tabularx}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Causal and ablation evidence. Parameter-matched and inference-time contrasts that keep the descriptor claim from collapsing into a parameter-count story.}
 \label{tab:e1-causal}
@@ -201,7 +201,7 @@ Test02 & shuffled descriptor & $73.2\%$ & $-9.8$ & control without correct pairi
 \end{tabularx}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Geometry, information retention, and fine discrimination. The descriptor arms do not merely raise retrieval. They also reorganize cross-encoder geometry and preserve more cross-modal information prior to the projection bottleneck.}
 \label{tab:e1-geometry}
@@ -389,7 +389,7 @@ The descriptor inventory has to remain historical rather than flattened into a s
 
 Mechanisms define the route through which descriptor information acts. Their role is technical and causal: they determine whether descriptor content enters as appended feature, as attention context, as an internal bias, or as downstream conditioning.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Implemented mechanism variants.}
 \label{tab:mechanisms}
@@ -416,7 +416,7 @@ Mechanisms define the route through which descriptor information acts. Their rol
 
 An arm is the experimentally concrete level where descriptor, mechanism, and front meet. The same descriptor can appear in multiple arms, and the same mechanism can be reused across distinct descriptor families. The point of the table below is to fix the naming system that the main text only uses in passing.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Canonical arms by front.}
 \label{tab:canonical-arms}
@@ -456,12 +456,12 @@ An arm is the experimentally concrete level where descriptor, mechanism, and fro
 
 The program is intentionally staged across distinct architectural regimes. What remains stable is not one identical network for every front, but a dual-encoder logic, a descriptor-injection point, a projection into shared space, and a comparison protocol.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Architectural skeletons by front.}
 \label{tab:arch-skeletons}
 \scriptsize
-\begin{tabularx}{\textwidth}{l l l l l l}
+\begin{tabularx}{\textwidth}{@{}P{0.12\textwidth}P{0.14\textwidth}P{0.14\textwidth}Y P{0.14\textwidth}P{0.10\textwidth}@{}}
 \toprule
 \textbf{Regime} & \textbf{Encoder A} & \textbf{Encoder B} & \textbf{Projection} & \textbf{Objective} & \textbf{Status} \\
 \midrule
@@ -482,12 +482,12 @@ Two shape conventions matter throughout the appendix. First, descriptor dimensio
 
 Phideus compares arms under structured retrieval rather than under free-form anecdotal scorekeeping. The exact pool composition changes by front, but the evaluation logic remains conservative: matched pairs, hard distractors, grouped uncertainty, and a score defined by the weaker retrieval direction.
 
-\begin{table}[!htbp]
+\begin{table}[H]
 \centering
 \caption{Canonical evaluation protocols by front.}
 \label{tab:eval-protocols}
 \footnotesize
-\begin{tabularx}{\textwidth}{@{}llXlll@{}}
+\begin{tabularx}{\textwidth}{@{}P{0.12\textwidth}P{0.18\textwidth}Y P{0.08\textwidth}P{0.10\textwidth}P{0.20\textwidth}@{}}
 \toprule
 \textbf{Front} & \textbf{Positive unit} & \textbf{Hard negatives} & \textbf{Pool} & \textbf{Grouping} & \textbf{Score} \\
 \midrule
@@ -593,12 +593,12 @@ Beacon's history is therefore not just a story of devices becoming newer. It is 
 
 \section{Convergence chronology}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Moments of convergence across branches.}
 \label{tab:convergence}
 \scriptsize
-\begin{tabularx}{\textwidth}{l l X X l}
+\begin{tabularx}{\textwidth}{@{}P{0.16\textwidth}P{0.15\textwidth}Y Y P{0.14\textwidth}@{}}
 \toprule
 \textbf{Phase} & \textbf{Branches} & \textbf{What converged} & \textbf{Why it mattered} & \textbf{Status} \\
 \midrule

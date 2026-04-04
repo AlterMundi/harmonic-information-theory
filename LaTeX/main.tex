@@ -103,13 +103,54 @@
 
 % --- Misc ---
 \usepackage{booktabs}           % Better tables
+\usepackage{array}              % Custom table column types
 \usepackage{tabularx}           % Auto-width columns (X type)
+\usepackage{tocloft}            % Table of contents styling
 \usepackage{enumitem}           % List customization
 \usepackage{csquotes}           % Context-sensitive quotes (for biblatex)
+
+% Keep float-only pages top-aligned instead of vertically centered.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
 
 % --- Custom commands ---
 \newcommand{\HIT}{\textsc{hit}}
 \newcommand{\ratio}[2]{#1\!:\!#2}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\frontdivider}[1][0.18\textwidth]{%
+  {\color{darkblue}\rule{#1}{0.8pt}}%
+}
+\newcommand{\frontcutdivider}[1][0.09\textwidth]{%
+  \makebox[\linewidth][c]{\color{darkblue}\rule{#1}{0.8pt}\hspace{0.035\textwidth}\rule{#1}{0.8pt}}%
+}
+\newcommand{\frontlabel}[1]{%
+  {\sffamily\small\scshape #1}%
+}
+
+% --- Table of contents styling ---
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{2.5em}
+\setlength{\cftaftertoctitleskip}{2.2em}
+\setlength{\cftbeforepartskip}{1.15em}
+\setlength{\cftbeforechapskip}{0.45em}
+\renewcommand{\cftpartfont}{\large\bfseries}
+\renewcommand{\cftpartpagefont}{\large\bfseries}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftpartleader}{\hfill}
+\renewcommand{\cftchapleader}{\hfill}
+\setlength{\cftchapnumwidth}{2.2em}
+\setlength{\cftsecindent}{2.4em}
+\setlength{\cftsecnumwidth}{2.6em}
+\setlength{\cftsubsecindent}{4.8em}
+\setlength{\cftsubsecnumwidth}{3.2em}
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftsecpagefont}{\small}
+\renewcommand{\cftsubsecfont}{\small}
+\renewcommand{\cftsubsecpagefont}{\small}
 
 % --- Document metadata ---
 \title{%
@@ -141,7 +182,47 @@
 \frontmatter
 
 % --- Title page ---
-\maketitle
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+
+{\Huge\bfseries Harmonic Information Theory\par}
+\vspace{0.55em}
+{\LARGE Foundations\par}
+\vspace{1.1em}
+\frontcutdivider
+
+\vspace{2.4em}
+\begin{minipage}{0.72\textwidth}
+\centering
+
+{\frontlabel{Authors}\par}
+\vspace{0.45em}
+{\normalsize Mariano Fern\'andez M\'endez \quad Nicol\'as Ech\'aniz\par}
+
+\vspace{1.35em}
+{\frontlabel{Compilation and final writing}\par}
+\vspace{0.45em}
+{\normalsize Mariano Fern\'andez M\'endez\par}
+
+\vspace{1.35em}
+{\frontlabel{Institutional framework}\par}
+\vspace{0.45em}
+{\normalsize Asociaci\'on Civil AlterMundi\par}
+
+\vspace{1.25em}
+{\frontlabel{Research and development team}\par}
+\vspace{0.55em}
+{\small
+Anabella Scigliano \quad Federico Bonino \quad Juli\'an De La Reta\par
+Mart\'in Fern\'andez M\'endez \quad Pablo Bustos \quad Saira Asua\par
+Santiago Cetr\'an \quad Sof\'ia Campagnoli\par}
+\end{minipage}
+
+\vfill
+{\Large 2026\par}
+\end{titlepage}
 
 % --- Legal page ---
 \input{chapters/legal}
@@ -150,7 +231,11 @@
 \input{chapters/writing_note}
 
 % --- Table of contents ---
+\clearpage
+\begingroup
+\hypersetup{linkcolor=black}
 \tableofcontents
+\endgroup
 
 % ============================================================
 \mainmatter
