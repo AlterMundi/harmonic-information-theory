@@ -465,7 +465,7 @@ The program is intentionally staged across distinct architectural regimes. What 
 \toprule
 \textbf{Regime} & \textbf{Encoder A} & \textbf{Encoder B} & \textbf{Projection} & \textbf{Objective} & \textbf{Status} \\
 \midrule
-E1 canonical & MERTLite (${\sim}60$M) & MIDI Transf.\ (${\sim}13$M) & shared 256d & VICReg & impl. \\
+E1 canonical & MERTEncoderLite (${\sim}60$M) & MIDI Transf.\ (${\sim}13$M) & shared 256d & VICReg & implemented \\
 Gate 8 & E1 encoders & E1 encoders & cond.\ proj.\ head & VICReg + cond. & impl. \\
 G9/A10 & audio-only retro. & n/a & E1 protocol reuse & retrieval-oriented & retro. \\
 E2 initial & speech from scratch & EGG from scratch & shared heads & VICReg-style & impl. \\
@@ -539,16 +539,16 @@ Gate 5B closure & Multi-seed, causal, geometric evidence consolidates E1 & Estab
 Downstream extension & Gate 6 closes AMT validation outside retrieval & Tested whether descriptor effects survive outside flagship task & closed negative \\
 Proj.-conditioning & Gate 8: \texttt{pcd > pca > pcd-zero > pcm > ctrl} & Descriptor signal survives deep in projection pipeline & closed \\
 Retrospective reopening & Gate 9 and A10 revisit natural harmony in music & Reopened strong-theory questions without displacing main evidence & retrospective \\
-Mechanism clarification & Gate 10 closes the mechanism contrast in the retrospective branch & Mechanism dominates over descriptor content; concat $>$ FiLM $\gg$ attn bias & closed \\
-New sensor-physics front & E2: Speech$\leftrightarrow$EGG with strong baseline, closed null & Extends program outside symbolic music pairing & closed null \\
-Encoder-regime comparison & S2-P3 completes first WavLM-Large frozen pass & Shifts live question from mechanism to encoder regime; next step = P2 vs P3 & active \\
-Synthetic-physical bridge & E3: Audio$\leftrightarrow$Lissajous closed through P6 & Creates first explicitly shared object with Beacon & closed / first arc stabilized \\
-Cardiovascular expansion & E4: ECG$\leftrightarrow$PPG & Extends logic beyond acoustics into physiology & horizon \\
+Mechanism clarification & Gate 10 closes the mechanism contrast inside the retrospective branch & Established that mechanism dominates over descriptor content in that reopening & closed \\
+New sensor-physics front & Escalon 2 formalizes Speech$\leftrightarrow$EGG with a strong baseline and a closed first null on mechanisms & Extends the program outside symbolic music pairing & closed null \\
+Encoder-regime comparison & S2-P3 completes a first WavLM-Large frozen pass on the speech side & Moves the live question from mechanism to encoder-regime contrast under a stronger backbone & implemented / comparison active \\
+Synthetic-physical bridge & Escalon 3 closes a first computational arc around Audio$\leftrightarrow$Lissajous & Creates the first explicitly shared object with Beacon and stabilizes its initial computational reading & closed through P6 \\
+Cardiovascular expansion & Escalon 4 is named around ECG$\leftrightarrow$PPG & Extends the logic beyond acoustics into physiology & horizon \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-This sequence matters because it shows what the current manuscript does and does not claim. The strong computational closure belongs to the first escalon. The second escalon has a serious baseline and a closed null. The third escalon has already stabilized a first computational arc through P6. The cardiovascular expansion remains a named horizon rather than a closed empirical chapter.
+This sequence matters because it shows what the current manuscript does and does not claim. The strong flagship closure belongs to the first escalon. The second escalon now has a serious baseline, a closed first null, and a completed first encoder-regime extension. The third escalon is no longer merely programmatic: it has already stabilized the first computational arc of the Lissajous line. Beyond that, the cardiovascular front remains the next named horizon rather than a closed empirical chapter.
 
 
 \section{Beacon chronology}
