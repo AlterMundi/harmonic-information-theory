@@ -103,6 +103,7 @@
 \graphicspath{{figures/}}       % Image search path
 \usepackage{subcaption}         % Subfigures (a), (b)
 \usepackage{float}              % [H] placement specifier
+\usepackage{pdfpages}           % Full-page PDF/image inclusion (cover)
 
 % --- Misc ---
 \usepackage{booktabs}           % Better tables
@@ -186,6 +187,15 @@
 \frontmatter
 \hypersetup{pageanchor=false}
 
+% --- Cover page (full-bleed image) ---
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[inner sep=0pt] at (current page.center) {%
+    \includegraphics[width=\paperwidth, height=\paperheight]{tapa_libro_hit.jpeg}%
+  };
+\end{tikzpicture}
+\clearpage
+
 % --- Title page ---
 \begin{titlepage}
 \thispagestyle{empty}
@@ -234,6 +244,9 @@ Santiago Cetr\'an \quad Sof\'ia Campagnoli\par}
 
 % --- Writing process note ---
 \input{chapters/writing_note}
+
+% --- Acknowledgments ---
+\input{chapters/acknowledgments}
 
 % --- Table of contents ---
 \clearpage
