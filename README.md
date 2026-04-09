@@ -39,9 +39,9 @@ This license permits copying, redistribution, adaptation, transformation, and re
 
 **Suggested attribution:**
 
-Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory*. Asociación Civil AlterMundi, 2026. License: CC BY 4.0. Official source: [OFFICIAL URL].
+Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory*. Asociación Civil AlterMundi, 2026. License: CC BY 4.0. Official source: https://hit.altermundi.net.
 
 ## Official Source and Contact
 
-- **Official source:** [OFFICIAL URL]
-- **Contact:** [CONTACT EMAIL]
+- **Official source:** https://hit.altermundi.net
+- **Contact:** editorial@altermundi.net
