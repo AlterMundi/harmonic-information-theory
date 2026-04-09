@@ -252,7 +252,7 @@ This distinction also stabilizes the reading of the chapter's own evidence. D4 a
 \section[The central result: descriptor-guided cross-modal learning works]{The central result:\texorpdfstring{\\}{ }descriptor-guided cross-modal learning works}
 
 
-The strongest closed result of Phideus remains the descriptor-guided validation of the canonical dual arm in Escalon 1. The d4a4 arm is currently supported by five evaluation-seed reads over a single trained checkpoint, yielding a reference mean S of 84.1 percent with a standard deviation of 2.3 percentage points. The unguided baseline D0, evaluated across five independent training seeds, reaches 75.2 percent with the same standard deviation. The gap is therefore large and stable enough to anchor the chapter's main claim, but the two rows should not be read as if they expressed the same kind of variance: d4a4 currently measures evaluator variance around a fixed trained model, whereas D0 measures full training variance across reruns. Even under that caveat, the guided arm remains well above the unguided baseline, and the result must be read against the explicit pipeline just defined: descriptor content, route of injection, projection into shared space, and only then retrieval.
+The strongest closed result of Phideus remains the descriptor-guided validation of the canonical dual arm in Escalon 1. The d4a4 arm is supported by five independent training runs, yielding a mean S of 84.0 percent with a standard deviation of 2.7 percentage points (range 81.4--87.6). The unguided baseline D0, evaluated under the same five-seed training design, reaches 75.2 percent with a standard deviation of 2.3 percentage points. The gap of 8.8 percentage points is large (Cohen $d = 3.51$, $p < 0.001$) and stable across seeds: the observed five-seed ranges do not overlap, with the worst guided seed (81.4) exceeding the best unguided seed (77.4) by 4.0 percentage points. The result must be read against the explicit pipeline just defined: descriptor content, route of injection, projection into shared space, and only then retrieval.
 
 That retrieval advantage is supported by three causal lines of evidence. The first is inference-time ablation. When the A4 signal is zeroed at evaluation while keeping the trained weights fixed, performance collapses from 83.8 percent to 7.8 percent. The descriptor is not acting as decorative side information. The model depends on it. The second is parameter-matched degradation. Random, zeroed, or temporally shuffled substitutes fall back to the unguided band, preserving an 8.0-to-9.8-percentage-point causal gap between the real descriptor and its degraded controls. The advantage therefore comes from structured information rather than from added capacity alone. The third is pre-registration. Prediction matrices and admissible inference rules were written before the main readout, constraining interpretation before the relevant numbers were seen. That control does not make post-hoc reasoning impossible, but it sharply limits the most common forms of confirmation drift \parencite{pearl_2009}.
 
@@ -271,7 +271,7 @@ The front also closes strongly at the level of discrimination difficulty. Hard-n
 \toprule
 Dimension & Test & Result & Interpretation \\
 \midrule
-Retrieval & Evaluation-seed reference & $84.1\% \pm 2.3$pp (\texttt{d4a4}) & Strong guided reference; full training-seed replication pending \\
+Retrieval & Training-seed closure & $84.0\% \pm 2.7$pp (\texttt{d4a4}) & Flagship guided arm replicated across five independent training seeds \\
 Causal (ablation) & Inference-time zeroing & $83.8\% \to 7.8\%$ & Descriptor causally necessary \\
 Causal (controls) & Parameter-matched degradation & $+8.0$ to $+9.8$pp gap & Information, not parameters \\
 Geometric & CKA alignment & $+82\%$ best arm / $+51\%$ \texttt{d4a4} & Representational reorganization across guided arms \\
@@ -284,14 +284,14 @@ Fine-grained & Hard negatives & $> 94\%$ across canonical arms & Strong temporal
 
 \begin{table}[ht]
 \centering
-\caption{Canonical cross-modal retrieval reference across the main Escalon~1 arms ($n = 5$ per row; \texttt{d4a4} uses evaluation-seed reads over a fixed checkpoint).}
+\caption{Canonical cross-modal retrieval reference across the main Escalon~1 arms ($n = 5$ independent training seeds per row).}
 \label{tab:escalon1_multiseed}
 \footnotesize
 \begin{tabular}{@{}lcccccc@{}}
 \toprule
 Arm & Mean $S$ & SD & Range & $\Delta$ vs D0 & Cohen $d$ & Sig. \\
 \midrule
-d4a4 & 84.1\% & 2.3pp & 82.6--88.4 & $+8.9$pp & pending & pending \\
+d4a4 & 84.0\% & 2.7pp & 81.4--87.6 & $+8.8$pp & 3.51 & $p < 0.001$ \\
 d4-a4r & 81.2\% & 2.5pp & 78.4--83.4 & $+6.0$pp & 2.50 & $p < 0.01$ \\
 a4r & 80.7\% & 1.9pp & 79.4--84.0 & $+5.5$pp & 2.63 & $p < 0.01$ \\
 D0 & 75.2\% & 2.3pp & 71.8--77.4 & --- & --- & baseline \\

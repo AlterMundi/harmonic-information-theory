@@ -158,7 +158,7 @@ This appendix gathers the quantitative evidence that the main body either summar
 
 Five status labels are used throughout the appendix. \texttt{Closed positive} marks a result that supports the main evidential line under a fixed protocol. \texttt{Closed null} marks a condition that completed its comparison without defensible lift over baseline. \texttt{Closed negative useful} marks a condition whose failure clarified mechanism or domain limits. \texttt{Retrospective} marks a branch that is informative but not central to the present flagship claim. \texttt{Provisional} marks runs that already constrain interpretation but have not yet reached their final comparable endpoint.
 
-Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denotes the conservative score \texttt{min(A2M, M2A)} for the relevant evaluation pool. In Escalon 2, bootstrap intervals are grouped by speaker; in Escalon 1, the canonical summaries use stabilized reference readings rather than re-deriving the entire raw evaluation tree here. Where a row comes from evaluation-seed reads over a fixed checkpoint rather than from full training-seed reruns, that status is marked explicitly. Where \texttt{best} and \texttt{final} differ, both are reported explicitly to avoid flattening early peaks into final closures.
+Two metric conventions remain stable. In cross-modal retrieval, \texttt{S} denotes the conservative score \texttt{min(A2M, M2A)} for the relevant evaluation pool. In Escalon 2, bootstrap intervals are grouped by speaker; in Escalon 1, the canonical summaries use stabilized reference readings rather than re-deriving the entire raw evaluation tree here. Where \texttt{best} and \texttt{final} differ, both are reported explicitly to avoid flattening early peaks into final closures.
 
 
 \section{Escalon 1 - Canonical closed results}
@@ -176,7 +176,7 @@ The body of Chapter 11 uses Escalon 1 as the strongest demonstration that descri
 \textbf{Arm} & \textbf{Descriptor route} & \textbf{\texttt{S} (canonical ref.)} & \textbf{$\Delta$ vs \texttt{D0}} & \textbf{Reading} & \textbf{Status} \\
 \midrule
 \texttt{D0} & none & $75.2\% \pm 2.3$ & $0.0$ & unguided shared-space baseline & closed baseline \\
-\texttt{d4a4} & dual guided (\texttt{D4+A4}) & $84.1\% \pm 2.3$ (evaluation-seed) & $+8.9$ & flagship guided arm; full training-seed replication pending & positive reference \\
+\texttt{d4a4} & dual guided (\texttt{D4+A4}) & $84.0\% \pm 2.7$ & $+8.8$ & flagship guided arm; five-seed training replication complete & closed positive \\
 \texttt{a4r} & audio-side rev.\ cross-att & $80.7\% \pm 1.9$ & $+5.5$ & strongest single-descriptor arm & closed positive \\
 \texttt{d4-a4r} & hybrid (\texttt{D4}+\texttt{A4r}) & $81.2\% \pm 2.5$ & $+6.0$ & hybrid guided arm & closed positive \\
 \bottomrule
