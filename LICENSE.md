@@ -17,13 +17,13 @@ This work was developed and published within the institutional framework of **As
 
 The research and development team credited in this edition is:
 
-- Anabella Scigliano
+- Anabella Scigliano Mattiauda
 - Federico Bonino
 - Julián De La Reta
 - Martín Fernández Méndez
 - Pablo Bustos
 - Saira Asua
-- Santiago Cetrán
+- Santiago Rodríguez Cetrán
 - Sofía Campagnoli
 
 ## Scope of This Repository
