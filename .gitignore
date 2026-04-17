@@ -13,3 +13,7 @@ LaTeX/*.synctex.gz
 LaTeX/*.toc
 LaTeX/*.lof
 LaTeX/*.lot
+
+# Local draft Markdown variants
+HIT_02.md
+hit-02.md
