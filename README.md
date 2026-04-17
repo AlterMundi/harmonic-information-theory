@@ -24,7 +24,7 @@ This produces the working PDF at `LaTeX/main.pdf`.
 
 ## Editorial Status
 
-- The **PDF** is the official bibliographic edition of the book. Its ISBN is currently **in process**.
+- The **PDF** is the official bibliographic edition of the book. Its ISBN is **978-631-91761-0-0**.
 - This **repository** is the open editorial source. It does **not** carry an ISBN as an independent bibliographic product.
 
 The distinction matters because the work is one while its supports are not identical. The bibliographic edition, the editorial source, and the broader public circulation of the book belong to the same publication architecture, but they do not play the same role.
@@ -39,7 +39,7 @@ This license permits copying, redistribution, adaptation, transformation, and re
 
 **Suggested attribution:**
 
-Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory*. Asociación Civil AlterMundi, 2026. License: CC BY 4.0. Official source: https://hit.altermundi.net.
+Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory: Foundations*. José de la Quintana, Córdoba, Argentina: AlterMundi, 2026. ISBN 978-631-91761-0-0. License: CC BY 4.0. Official source: https://hit.altermundi.net.
 
 ## Official Source and Contact
 

@@ -182,6 +182,12 @@
   Sof\'ia Campagnoli}
 }
 \date{2026}
+\hypersetup{
+  pdftitle={Harmonic Information Theory: Foundations},
+  pdfauthor={Mariano Fernandez Mendez and Nicolas Echaniz},
+  pdfsubject={First digital edition. Official PDF bibliographic edition. ISBN 978-631-91761-0-0},
+  pdfkeywords={Harmonic Information Theory, Foundations, AlterMundi, Mariano Fernandez Mendez, Nicolas Echaniz, ISBN 978-631-91761-0-0}
+}
 
 % ============================================================
 \begin{document}
@@ -351,5 +357,32 @@ Santiago Rodr\'iguez Cetr\'an & Sof\'ia Campagnoli \\
 
 % --- Writing process note (closing page) ---
 \input{chapters/writing_note}
+
+% --- Back cover ---
+\clearpage
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\pagecolor{black}
+\color{white}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[
+    draw=white,
+    line width=0.8pt,
+    rounded corners=2pt,
+    inner xsep=14pt,
+    inner ysep=10pt
+  ] at ([yshift=-0.19\paperheight]current page.north) {%
+    {\sffamily\bfseries\Large AlterMundi}%
+  };
+  \node[anchor=south, inner sep=0pt] at ([yshift=2.0cm]current page.south) {%
+    \includegraphics[width=0.36\paperwidth]{../Insumos/ISBN/9786319176100.jpg}%
+  };
+  \node[anchor=south, font=\sffamily\small] at ([yshift=0.95cm]current page.south) {%
+    ISBN 978-631-91761-0-0%
+  };
+\end{tikzpicture}
+\null
+\end{titlepage}
 
 \end{document}

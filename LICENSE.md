@@ -19,10 +19,12 @@ The research and development team credited in this edition is:
 
 - Anabella Scigliano Mattiauda
 - Federico Bonino
+- Javier Jorge
 - Julián De La Reta
 - Martín Fernández Méndez
 - Pablo Bustos
 - Saira Asua
+- Samanta Lañin
 - Santiago Rodríguez Cetrán
 - Sofía Campagnoli
 
@@ -50,22 +52,22 @@ Under the following conditions:
 
 ## Suggested Attribution
 
-Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory*. Asociación Civil AlterMundi, 2026. Official PDF bibliographic edition, ISBN in process. License: CC BY 4.0. Official source: [OFFICIAL URL].
+Fernández Méndez, Mariano, and Nicolás Echániz. *Harmonic Information Theory: Foundations*. José de la Quintana, Córdoba, Argentina: AlterMundi, 2026. Official PDF bibliographic edition. ISBN 978-631-91761-0-0. License: CC BY 4.0. Official source: https://hit.altermundi.net.
 
 ## ISBN Policy
 
 The **ISBN applies only to the official PDF bibliographic edition** of the book.
 
-At the present stage, the PDF edition circulates as an official preliminary edition with:
+The official PDF bibliographic edition carries:
 
-**ISBN: in process**
+**ISBN: 978-631-91761-0-0**
 
 The Markdown version of the book and this repository are part of the open publication ecosystem of the same work, but they do **not** carry the ISBN as independent bibliographic products.
 
 ## Official Source and Contact
 
-**Official source:** [OFFICIAL URL]  
-**Contact:** [CONTACT EMAIL]
+**Official source:** https://hit.altermundi.net  
+**Contact:** editorial@altermundi.net
 
 ## Third-Party Materials
 
@@ -73,4 +75,4 @@ Any third-party material identified as such is excluded from this license unless
 
 ## Update Note
 
-Once the ISBN is assigned, the official PDF edition, website, and repository documentation may be updated to reflect the final bibliographic data. That update does not alter the CC BY 4.0 licensing basis of this repository unless explicitly stated otherwise.
+The assignment of the ISBN updates the bibliographic data of the official PDF edition, but does not alter the CC BY 4.0 licensing basis of this repository unless explicitly stated otherwise.
