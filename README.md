@@ -25,6 +25,7 @@ This produces the working PDF at `LaTeX/main.pdf`.
 ## Editorial Status
 
 - The **PDF** is the official bibliographic edition of the book. Its ISBN is **978-631-91761-0-0**.
+- The PDF currently exported from this source and fixed on **2026-04-17** is the **first digital edition** of the book and should be treated as the closed bibliographic artifact of that edition.
 - This **repository** is the open editorial source. It does **not** carry an ISBN as an independent bibliographic product.
 
 The distinction matters because the work is one while its supports are not identical. The bibliographic edition, the editorial source, and the broader public circulation of the book belong to the same publication architecture, but they do not play the same role.
