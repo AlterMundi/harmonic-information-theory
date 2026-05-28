@@ -28,6 +28,12 @@ This produces the working PDF at `LaTeX/main.pdf`.
 - The PDF currently exported from this source and fixed on **2026-04-17** is the **first digital edition** of the book and should be treated as the closed bibliographic artifact of that edition.
 - This **repository** is the open editorial source. It does **not** carry an ISBN as an independent bibliographic product.
 
+## Translation Workflow Note
+
+This public repository preserves the canonical editorial source of the book in English.
+
+Reusable EN-ES translation workflow artifacts, interpretive prompt packs, and local Spanish translation workspaces are maintained outside the tracked public source, in the broader editorial coordination environment. This keeps the public repository stable as the canonical source while allowing translation work to evolve under a separate editorial workflow.
+
 The distinction matters because the work is one while its supports are not identical. The bibliographic edition, the editorial source, and the broader public circulation of the book belong to the same publication architecture, but they do not play the same role.
 
 ## License
